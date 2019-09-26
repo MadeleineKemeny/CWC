@@ -38,6 +38,13 @@ const wineSchema = new Schema({
   volume: Number
 });
 
+wineSchema.index({
+  name: "text",
+  nested_region: "text",
+  longDescription: "text",
+  shortDescription: "text"
+});
+
 const Wine = mongoose.model("Wine", wineSchema);
 
 module.exports = Wine;
