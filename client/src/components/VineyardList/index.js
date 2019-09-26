@@ -6,12 +6,12 @@ function VineyardList(props) {
                 <div className="card-body">
                     <div className="row">
                         <div className="col-sm-12">
-                            <h3>{props.vineyardName}</h3>
-                            <h5>{props.subregion} - {props.vineyardRegion}</h5>
+                            <h4>{props.vineyardName}</h4>
+                            <p>{props.subregion} - {props.vineyardRegion}</p>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-sm-12">
+                        <div>
                         <p dangerouslySetInnerHTML={{ __html: props.vineyardDetails}}></p>
                         </div>
                     </div>
