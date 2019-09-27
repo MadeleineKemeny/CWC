@@ -17,7 +17,10 @@ class Cart extends React.Component {
                                 >
                                 </CartItems>
                             ))}
-                            <Subtotal />
+                            <Subtotal 
+                            totalQty = {this.props.cartItems.length}
+                            totalPrice = {"$" + this.props.subtotal.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                            />
                         </CartTable>
 
                         ) : <div>Looks a little empty. Browse our collection of wines.</div>}

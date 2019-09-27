@@ -28,7 +28,8 @@ import img6 from "./img/vineyard-misty.png";
 class App extends React.Component {
   state = {
     User: null,
-    cartItems: []
+    cartItems: [],
+    subtotal: 0
   };
 
   updateGlobalState = (name, val) => {
@@ -38,10 +39,18 @@ class App extends React.Component {
   handleAddToCart = wine => {
     console.log("add wine to cart", wine);
     var exisitingCart = this.state.cartItems;
+    var priceTotal = this.state.subtotal  
+
     this.setState({
-      cartItems: [...exisitingCart, wine]
+      cartItems: [...exisitingCart, wine],
+      subtotal: priceTotal += wine.price
     });
   };
+
+  handleSubtotal = () => {
+    var itemPrice = this.state.cartItems.price;
+    console.log(itemPrice);
+  }
 
   render() {
     return (
@@ -96,7 +105,8 @@ class App extends React.Component {
                 <Route
                   exact
                   path="/wines"
-                  render={() => <Wines onAddToCart={this.handleAddToCart} />}
+                  render={() => <Wines 
+                    onAddToCart={this.handleAddToCart} />}
                 />
                 <Route
                   exact
@@ -111,7 +121,7 @@ class App extends React.Component {
                 <Route
                   exact
                   path="/cart"
-                  render={() => <Cart cartItems={this.state.cartItems} />}
+                  render={() => <Cart cartItems={this.state.cartItems} subtotal={this.state.subtotal}/>}
                 />
                 <Route exact path="/producers" component={OurProducers} />
                 <Route exact path="/blogs" component={Blogs} />

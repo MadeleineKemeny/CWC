@@ -148,6 +148,7 @@ class Wines extends React.Component {
                             shortDescription = {wine.shortDescription}
                             volume = {wine.volume}
                             price = {wine.price}
+                            
                             onAddToCart = {() => this.props.onAddToCart(wine)}
                             winelink = {"/wine/" + wine._id}
                             btnName = "View Details"
