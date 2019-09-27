@@ -21,9 +21,9 @@ class BottomNav extends Component {
             <Nav.Link as={Link} to="/faqs">
               FAQs
             </Nav.Link>
-            <Nav.Link as={Link} to="/admin">
+            <a href="https://cwc-admin.herokuapp.com/admin">
               <i className="fas fa-wine-glass fa-4x" id="adminPortal"></i>
-            </Nav.Link>
+            </a>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
