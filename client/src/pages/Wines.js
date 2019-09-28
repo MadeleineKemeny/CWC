@@ -149,10 +149,9 @@ class Wines extends React.Component {
                             volume = {wine.volume}
                             price = {wine.price}
                             onAddToCart = {() => this.props.onAddToCart(wine)}
-                        >                            
-                            <Link to={"/wine/" + wine._id}>
-                                <button className="btn btn-primary">View Details</button>
-                            </Link>
+                            winelink = {"/wine/" + wine._id}
+                            btnName = "View Details"
+                        >                                
                         </WineCard>
                     ))
                 : <div>No wines available</div>} 

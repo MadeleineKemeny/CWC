@@ -18,6 +18,7 @@ class WineDetails extends React.Component {
 
     render() {
         return (
+            <div className = "scroll">
             <div>
                 {!this.state.loading ?
                 (<div>
@@ -31,12 +32,9 @@ class WineDetails extends React.Component {
                     volume = {this.state.wine.volume}
                     price = {this.state.wine.price}
                     onAddToCart = {() => this.props.onAddToCart(this.state.wine)}
+                    winelink = "/wines"
+                    btnName = "Back to Browse"
                     >
-                    <Link to="/wines">
-                        <button className="btn btn-primary">
-                            Back to Browse
-                        </button>
-                    </Link>
                     </WineCard>
                     <VineyardList
                         vineyardName = {this.state.wine.vineyard.fullName}
@@ -48,6 +46,7 @@ class WineDetails extends React.Component {
                     </div>
                     ) : <div>Loading...</div>}
                 
+            </div>
             </div>
         )
     }

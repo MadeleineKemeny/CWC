@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.css"
 
 class WineCard extends React.Component {
@@ -38,12 +39,16 @@ class WineCard extends React.Component {
                                     onChange={this.handleChange} 
                                     value={this.state.quantity} />
                                 </div>
-                                <div className="col-9">
+                                <div className="col-2">
                                     <button onClick={this.props.onAddToCart} className="btn btn-primary ">Add to Cart</button>
                                 </div>
+                                <div className="col-2">
+                                <Link to={this.props.winelink}>
+                                <button className="btn btn-primary">{this.props.btnName}</button>
+                                </Link>
+                                </div>
+                                
                             </div>
-
-                            <div>{this.props.children}</div>
 
                             <a href="#" className="card-link">Customer Reviews</a>
                         </div>
