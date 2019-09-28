@@ -48,15 +48,16 @@ class App extends React.Component {
   };
 
   handleItemDelete = item => {
-    var itemArray = this.state.cartItems;
+    const previousCart = this.state.cartItems; //this is an array
+    let indexItem = previousCart.indexOf(item);
     var priceTotal = this.state.subtotal;
-    itemArray.splice(item, 1);
-    console.log("item array: ", itemArray);
+    let itemRemoval = previousCart.splice(indexItem, 1);
     this.setState({
-      cartItems: itemArray,
+      cartItems: previousCart,
       subtotal: priceTotal -= item.price
     })
   }
+
 
   render() {
     return (

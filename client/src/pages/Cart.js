@@ -3,6 +3,10 @@ import { CartCard, CartTable, CartItems, Subtotal } from "../components/CartPage
 import OrdersAPI from "../utils/OrdersAPI"
 
 class Cart extends React.Component {
+    state = {
+       showCheckout: false 
+    }
+
     // saveOrder = () => {
     //     OrdersAPI.saveOrder({
     //         wineName:
@@ -17,6 +21,10 @@ class Cart extends React.Component {
     //         zip:
     //     })
     // }
+    handleCheckoutClick = event => {
+        event.preventDefault()
+        this.setState({showCheckout: true})
+    }
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -50,12 +58,17 @@ class Cart extends React.Component {
                             <Subtotal 
                             totalQty = {this.props.cartItems.length}
                             totalPrice = {"$" + this.props.subtotal.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                            onClick = {
+                                this.handleCheckoutClick
+                                // this.setState({showCheckout: true})
+                            }
                             />
                         </CartTable>
 
                         ) : <div>Looks a little empty. Browse our collection of wines.</div>}
                 </CartCard>
                 <CartCard>
+                    <div className="paymentSection">
                     <h1 className="card-title">Shipping Information</h1>
                     <div className="form-row">
                         <div className="form-group col-md-6">
@@ -191,7 +204,8 @@ class Cart extends React.Component {
                                 </div>
                         </div>
                         <button className="btn btn-primary">Complete Order</button>
-            </CartCard>
+                        </div>
+            </CartCard>    
             </div>
                                     )
                                 }
