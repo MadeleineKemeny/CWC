@@ -4,26 +4,36 @@ import OrdersAPI from "../utils/OrdersAPI"
 
 class Cart extends React.Component {
     state = {
-       showCheckout: false 
+        wineName: "",
+        wineQty: "",
+        winePrice: "",
+        firstNameInput: "",
+        lastNameInput: "",
+        inputAddress: "",
+        inputAddress2: "",
+        inputCity: "",
+        inputState: "",
+        inputZip: ""
     }
 
     // saveOrder = () => {
     //     OrdersAPI.saveOrder({
-    //         wineName:
-    //         wineQty:
-    //         winePrice:
-    //         firstName:
-    //         lastName:
-    //         address1:
-    //         address2:
-    //         city:
-    //         state:
-    //         zip:
+    //         wineName: this.state.wineName,
+    //         wineQty: this.state.wineQty,
+    //         winePrice: this.state.winePrice,
+    //         firstName: this.state.firstNameInput,
+    //         lastName: this.state.lastNameInput,
+    //         address1: this.state.inputAddress,
+    //         address2: this.state.inputAddress2,
+    //         city: this.state.inputCity,
+    //         state: this.state.inputState,
+    //         zip: this.state.inputZip
     //     })
     // }
+
     handleCheckoutClick = event => {
         event.preventDefault()
-        this.setState({showCheckout: true})
+        // this.setState({showCheckout: true})
     }
 
     handleInputChange = event => {
@@ -38,6 +48,10 @@ class Cart extends React.Component {
         event.preventDefault();
         this.saveOrder();       
     };
+
+    handleSaveProducts = () => {
+        
+    }
     
     render() {
         return (
@@ -72,24 +86,24 @@ class Cart extends React.Component {
                     <h1 className="card-title">Shipping Information</h1>
                     <div className="form-row">
                         <div className="form-group col-md-6">
-                            <input type="text" className="form-control" id="firstNameInput" placeholder="First Name" />
+                            <input type="text" className="form-control" name="firstNameInput" value={this.state.firstNameInput} placeholder="First Name" />
                         </div>
                         <div className="form-group col-md-6">
-                            <input type="text" className="form-control" id="LastNameInput" placeholder="Last Name" />
+                            <input type="text" className="form-control" name="lastNameInput" value={this.state.lastNameInput} placeholder="Last Name" />
                         </div>
                     </div>
                     <div className="form-group">
-                        <input type="text" className="form-control" id="inputAddress" placeholder="Street Address" />
+                        <input type="text" className="form-control" name="inputAddress" value={this.state.inputAddress}  placeholder="Street Address" />
                     </div>
                     <div className="form-group">
-                        <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" />
+                        <input type="text" className="form-control" name="inputAddress2" value={this.state.inputAddress2}  placeholder="Apartment, studio, or floor" />
                     </div>
                     <div className="form-row">
                         <div className="form-group col-md-6">
-                            <input type="text" className="form-control" id="inputCity" placeholder="City" />
+                            <input type="text" className="form-control" name="inputCity" value={this.state.inputCity} placeholder="City" />
                         </div>
                         <div className="form-group col-md-4">
-                            <select id="inputState" className="form-control">
+                            <select name="inputState" className="form-control">
                                 <option selected>State</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -145,7 +159,7 @@ class Cart extends React.Component {
                             </select>
                         </div>
                         <div className="form-group col-md-2">
-                            <input type="text" className="form-control" id="inputZip" placeholder="Zip Code" />
+                            <input type="text" className="form-control" name="inputZip" value={this.state.inputZip} placeholder="Zip Code" />
                         </div>
                         </div>
                         <h1 className="card-title">Payment Information</h1>
