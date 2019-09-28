@@ -1,27 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Cart from '../../pages/Cart';
 import "./style.css"
 
 class WineCard extends React.Component {
-
-    // state = {
-    //     quantity: "",
-
-    // }
-
-    // handleChange = event => {
-    //     this.setState({
-    //         quantity: event.target.value,
-            
-    //     });
-    //     console.log("quantity: " + this.state.quantity);
-    // }
-
-    // handleSubmit = event => {
-    //     event.preventDefault();
-    // }
-
     render() {
         return (
 
@@ -39,13 +20,6 @@ class WineCard extends React.Component {
                             <p>{this.props.volume} ml | ${this.props.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
 
                             <div className="form-row">
-                                {/* <div className="col-1">
-                                    <input type="text" 
-                                    className="form-control text-center" 
-                                    placeholder="1"
-                                    onChange={this.handleChange} 
-                                    value={this.state.quantity} />
-                                </div> */}
                                 <div className="col-2">
                                     <button onClick={this.props.onAddToCart} className="btn btn-primary ">Add to Cart</button>
                                 </div>

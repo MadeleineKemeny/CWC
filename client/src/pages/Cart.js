@@ -1,7 +1,7 @@
 import React from "react";
 import { CartCard, CartTable, CartItems, Subtotal } from "../components/CartPage";
 
-class Cart extends React.Component {
+class Cart extends React.Component { 
     render() {
         return (
             <div className="scroll">
@@ -15,6 +15,7 @@ class Cart extends React.Component {
                                     quantity="1"
                                     price={"$" + cartItem.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
                                 >
+                                <i className="far fa-trash-alt" onDelete={() => this.props.onDelete(cartItem)}></i>
                                 </CartItems>
                             ))}
                             <Subtotal 

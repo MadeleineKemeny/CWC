@@ -2,7 +2,6 @@ import React from "react";
 import API from "../utils/API";
 import WineCard from "../components/Card";
 import VineyardList from "../components/VineyardList";
-import { Link } from "react-router-dom";
 
 class WineDetails extends React.Component {
     state = {

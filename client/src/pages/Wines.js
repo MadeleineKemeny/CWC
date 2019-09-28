@@ -1,7 +1,6 @@
 import React from "react";
 import API from "../utils/API";
 import WineCard from "../components/Card";
-import { Link } from "react-router-dom";
 import "./style.css"
 
 class Wines extends React.Component {

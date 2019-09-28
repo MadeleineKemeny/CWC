@@ -39,7 +39,7 @@ class App extends React.Component {
   handleAddToCart = wine => {
     console.log("add wine to cart", wine);
     var exisitingCart = this.state.cartItems;
-    var priceTotal = this.state.subtotal  
+    var priceTotal = this.state.subtotal;  
 
     this.setState({
       cartItems: [...exisitingCart, wine],
@@ -47,9 +47,15 @@ class App extends React.Component {
     });
   };
 
-  handleSubtotal = () => {
-    var itemPrice = this.state.cartItems.price;
-    console.log(itemPrice);
+  handleItemDelete = item => {
+    console.log("delete button clicked")
+    const itemArray = this.state.cartItems;
+    const priceTotal = this.state.subtotal;
+    itemArray.splice(item, 1);
+    this.setState({
+      cartItems: itemArray,
+      subtotal: priceTotal -= item.price
+    })
   }
 
   render() {
@@ -59,7 +65,7 @@ class App extends React.Component {
           <TopNav cartItems={this.state.cartItems}></TopNav>
           {window.location.pathname === "/admin" ? <NavAdmin /> : <span></span>}
           <div id="CWClogo">
-            <img src="reverseLogo.png" width="150" height="176" />
+            <img src="reverseLogo.png" width="150" height="176" alt=""/>
           </div>
           <Carousel
             className="myCarousel"
@@ -121,7 +127,7 @@ class App extends React.Component {
                 <Route
                   exact
                   path="/cart"
-                  render={() => <Cart cartItems={this.state.cartItems} subtotal={this.state.subtotal}/>}
+                  render={() => <Cart cartItems={this.state.cartItems} subtotal={this.state.subtotal} onDelete={this.handleItemDelete} />}
                 />
                 <Route exact path="/producers" component={OurProducers} />
                 <Route exact path="/blogs" component={Blogs} />
