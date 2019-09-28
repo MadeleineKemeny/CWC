@@ -30,6 +30,11 @@ select {
   margin-left: 7px;
 }
 
+.wineFilterForm ::placeholder {
+  color: rgb(83, 6, 6);
+  font-family: "Times New Roman", Times, serif;
+}
+
 .scroll {
   height: 420px;
   overflow-y: scroll;
