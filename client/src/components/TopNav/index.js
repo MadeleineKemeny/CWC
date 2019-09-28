@@ -29,7 +29,7 @@ class TopNav extends Component {
               Blogs We Love
             </Nav.Link>
             <Nav.Link as={Link} to="/cart">
-              <i class="fas fa-shopping-cart"> {this.props.cartItems.length} </i>
+              <i className="fas fa-shopping-cart"> {this.props.cartItems.length} </i>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
