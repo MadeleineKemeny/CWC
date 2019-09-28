@@ -23,6 +23,8 @@ function getWinesFilter(req) {
         break;
     }
   }
+  if (req.query.textQuery)
+    dbFilter.$text = { $search: req.query.textQuery };
 
   return dbFilter;
 }
