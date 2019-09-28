@@ -26,7 +26,7 @@ const seedUser = [
   {
     email: "mkskoly@gmail.com",
     password: "Test1234",
-    userType: "Admin", 
+    userType: "Admin",
     firstName: "Marta",
     lastName: "Skoly",
   },
@@ -86,12 +86,6 @@ const seedUser = [
     vineyardFullname: "Angeline"
   },
   {
-    email: "info@Angeline.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Angeline"
-  },
-  {
     email: "info@Angels&Cowboys.com",
     password: "Test1234",
     userType: "Producer",
@@ -102,12 +96,6 @@ const seedUser = [
     password: "Test1234",
     userType: "Producer",
     vineyardFullname: "Apriori Cellar"
-  },
-  {
-    email: "info@Arietta.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Arietta"
   },
   {
     email: "info@Arietta.com",
@@ -134,12 +122,6 @@ const seedUser = [
     vineyardFullname: "Aubert"
   },
   {
-    email: "info@Aubert.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Aubert"
-  },
-  {
     email: "info@AVA.Grace.com",
     password: "Test1234",
     userType: "Producer",
@@ -150,12 +132,6 @@ const seedUser = [
     password: "Test1234",
     userType: "Producer",
     vineyardFullname: "Baileyana"
-  },
-  {
-    email: "info@Balletto.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Balletto Winery"
   },
   {
     email: "info@Balletto.Winery.com",
@@ -1490,11 +1466,841 @@ const seedUser = [
     vineyardFullname: "ZD Wines"
   },
   {
-    email: "info@ZD.Wines.com",
+    email: "brooke.dunn@example.com",
     password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "ZD Wines"
-  }
+    userType: "User",
+    firstName: "Brock",
+    lastName: "Dunn",
+    address1: "284 small st",
+    city: "Happyland",
+    state: "Arkansas",
+    zipCode: "57429"
+  },
+  {
+    email: "bernd.kempe@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "bernd",
+    lastName: "kempe",
+    address1: "poststra√üe 154",
+    city: "Springfield",
+    state: "Arkansas",
+    zipCode: "57428"
+  },
+  {
+    email: "yasemin.krug@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "yasemin",
+    lastName: "krug",
+    address1: "birkenstra√üe 188",
+    city: "Do Stop",
+    state: "Arkansas",
+    zipCode: "28574"
+  },
+  {
+    email: "alexis.park@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "alexis",
+    lastName: "park",
+    address1: "3529 tecumseh rd",
+    city: "Sweet Lips",
+    state: "Arkansas",
+    zipCode: "29250"
+  },
+  {
+    email: "abigail.li@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "abigail",
+    lastName: "li",
+    address1: "6016 grand ave",
+    city: "Fairbanks",
+    state: "California",
+    zipCode: "28750"
+  },
+  {
+    email: "alvaro.herrera@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "alvaro",
+    lastName: "herrera",
+    address1: "6998 calle del barquillo",
+    city: "Sandwich",
+    state: "California",
+    zipCode: "28575"
+  },
+  {
+    email: "ana.leclercq@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "ana",
+    lastName: "leclercq",
+    address1: "4121 rue baraban",
+    city: "Fame",
+    state: "California",
+    zipCode: "28572"
+  },
+  {
+    email: "aslan.vanneerven@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "aslan",
+    lastName: "van neerven",
+    address1: "3500 sterrenburg",
+    city: "Toad Suck",
+    state: "California",
+    zipCode: "85742"
+  },
+  {
+    email: "chloe.taylor@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "chloe",
+    lastName: "taylor",
+    address1: "8798 totara avenue",
+    city: "Herculaneum",
+    state: "California",
+    zipCode: "57428"
+  },
+  {
+    email: "cornelius.apeland@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "cornelius",
+    lastName: "apeland",
+    address1: "2737 main st",
+    city: "Why",
+    state: "California",
+    zipCode: "28574"
+  },
+  {
+    email: "evelyn.sanchez@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "evelyn",
+    lastName: "sanchez",
+    address1: "1687 james st",
+    city: "Pie Town",
+    state: "California",
+    zipCode: "27257"
+  },
+  {
+    email: "francisco.flores@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "francisco",
+    lastName: "flores",
+    address1: "7847 paseo de zorrilla",
+    city: "Brilliant",
+    state: "California",
+    zipCode: "74285"
+  },
+  {
+    email: "hieronymus.cecilia@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "hieronymus",
+    lastName: "cecilia",
+    address1: "679 tolsteegbrug",
+    city: "Husband",
+    state: "California",
+    zipCode: "49452"
+  },
+  {
+    email: "julius.rikstad@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "julius",
+    lastName: "rikstad",
+    address1: "34 standgaards gate 6982",
+    city: "The Bottle",
+    state: "California",
+    zipCode: "50241"
+  },
+  {
+    email: "mia.li@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "mia",
+    lastName: "li",
+    address1: "7481 madras street",
+    city: "Toad Suck",
+    state: "California",
+    zipCode: "51031"
+  },
+  {
+    email: "minea.wirtanen@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "minea",
+    lastName: "wirtanen",
+    address1: "3961 itsen√§isyydenkatu",
+    city: "Why",
+    state: "California",
+    zipCode: "51820"
+  },
+  {
+    email: "miro.pulli@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "miro",
+    lastName: "pulli",
+    address1: "4244 reijolankatu",
+    city: "Husband",
+    state: "California",
+    zipCode: "52609"
+  },
+  {
+    email: "nanna.hansen@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "nanna",
+    lastName: "hansen",
+    address1: "5989 nibevej",
+    city: "Lonelyville",
+    state: "California",
+    zipCode: "53398"
+  },
+  {
+    email: "sebastian.peta@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "sebastian",
+    lastName: "pe√±a",
+    address1: "6037 calle del pez",
+    city: "Happyland",
+    state: "California",
+    zipCode: "54188"
+  },
+  {
+    email: "wanda.jimenez@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "wanda",
+    lastName: "jimenez",
+    address1: "870 westheimer rd",
+    city: "Sanibel Island",
+    state: "California",
+    zipCode: "55766"
+  },
+  {
+    email: "zuzanna.lu@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "zuzanna",
+    lastName: "lu",
+    address1: "soleglad 1513",
+    city: "Do Stop",
+    state: "California",
+    zipCode: "56556"
+  },
+  {
+    email: "maia.green@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "maia",
+    lastName: "green",
+    address1: "9622 lambie drive",
+    city: "Piggott",
+    state: "Florida",
+    zipCode: "57345"
+  },
+  {
+    email: "daniela.lorenzo@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "daniela",
+    lastName: "lorenzo",
+    address1: "7989 calle de Angel Garcia",
+    city: "Boring",
+    state: "Florida",
+    zipCode: "581343"
+  },
+  {
+    email: "livia.boyer@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "brooke",
+    lastName: "dunn",
+    address1: "8757 brick kiln road",
+    city: "Disco",
+    state: "Florida",
+    zipCode: "58924"
+  },
+  {
+    email: "thea.poulsen@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "thea",
+    lastName: "poulsen",
+    address1: "1961 s funnel tree lane",
+    city: "Loafers Glory",
+    state: "Florida",
+    zipCode: "59713"
+  },
+  {
+    email: "rodney.ross@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "rodney",
+    lastName: "ross",
+    address1: "8593 o'connell avenue",
+    city: "Sweet Lips",
+    state: "Florida",
+    zipCode: "60502"
+  },
+  {
+    email: "jennifer.ingvaldsen@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "√ºlk√º",
+    lastName: "mertoƒülu",
+    address1: "8055 tunafin rd",
+    city: "Cranky Corner",
+    state: "Florida",
+    zipCode: "61291"
+  },
+  {
+    email: "felix.carr@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "felix",
+    lastName: "carr",
+    address1: "3844 george street",
+    city: "Sanibel Island",
+    state: "Indiana",
+    zipCode: "62081"
+  },
+  {
+    email: "dax.hus@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "dax",
+    lastName: "hus",
+    address1: "9826 furkabaan",
+    city: "Piggott",
+    state: "Indiana",
+    zipCode: "62870"
+  },
+  {
+    email: "baptiste.lacroix@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "baptiste",
+    lastName: "lacroix",
+    address1: "4839 avenue jean-jauary",
+    city: "Boring",
+    state: "Indiana",
+    zipCode: "63659"
+  },
+  {
+    email: "terje.aarflot@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "terje",
+    lastName: "aarflot",
+    address1: "114 halsen apt 4678",
+    city: "Disco",
+    state: "Indiana",
+    zipCode: "64449"
+  },
+  {
+    email: "kelly.hubert@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "kelly",
+    lastName: "hubert",
+    address1: "4417 avenue de la lovaration",
+    city: "Loafers Glory",
+    state: "Indiana",
+    zipCode: "65238"
+  },
+  {
+    email: "soham.gardner@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "soham",
+    lastName: "gardner",
+    address1: "906 jones road",
+    city: "Cranky Corner",
+    state: "Maine",
+    zipCode: "66817"
+  },
+  {
+    email: "julie.young@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "julie",
+    lastName: "young",
+    address1: "8626 herbert road",
+    city: "Condemned Bar",
+    state: "Maine",
+    zipCode: "67606"
+  },
+  {
+    email: "wendy.snyder@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "wendy",
+    lastName: "snyder",
+    address1: "9730 bollinger rd",
+    city: "Oatmeal",
+    state: "Maine",
+    zipCode: "68395"
+  },
+  {
+    email: "javier.montgomery@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "javier",
+    lastName: "montgomery",
+    address1: "8433 depaul dr",
+    city: "Lonelyville",
+    state: "Maine",
+    zipCode: "69184"
+  },
+  {
+    email: "gonca.ozansoy@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "gonca",
+    lastName: "ozansoy",
+    address1: "4762 Muhitler cd",
+    city: "McHenry",
+    state: "Maine",
+    zipCode: "69974"
+  },
+  {
+    email: "idvio.moraes@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "id√°lio",
+    lastName: "moraes",
+    address1: "8165 rua quinze de novembro ",
+    city: "Fairbanks",
+    state: "Colorado",
+    zipCode: "70763"
+  },
+  {
+    email: "frank.hopkins@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "frank",
+    lastName: "hopkins",
+    address1: "9433 mill road",
+    city: "Sandwich",
+    state: "Colorado",
+    zipCode: "71552"
+  },
+  {
+    email: "benjamin.kowalski@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "benjamin",
+    lastName: "kowalski",
+    address1: "7145 concession road 23",
+    city: "Fame",
+    state: "Colorado",
+    zipCode: "72342"
+  },
+  {
+    email: "megan.sanders@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "megan",
+    lastName: "sanders",
+    address1: "6870 homestead rd",
+    city: "Herculaneum",
+    state: "Colorado",
+    zipCode: "73131"
+  },
+  {
+    email: "maeva.sirko@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "maeva",
+    lastName: "sirko",
+    address1: "645 oak st",
+    city: "Pie Town",
+    state: "Colorado",
+    zipCode: "73920"
+  },
+  {
+    email: "seyit.vandeklundert@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "seyit",
+    lastName: "van de klundert",
+    address1: "5182 catharijnesingel",
+    city: "Brilliant",
+    state: "Colorado",
+    zipCode: "74710"
+  },
+  {
+    email: "tobias.thomsen@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "tobias",
+    lastName: "thomsen",
+    address1: "1583 gartnerv√¶nget",
+    city: "Kucj Sjukket",
+    state: "Colorado",
+    zipCode: "75499"
+  },
+  {
+    email: "tracy.hicks@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "tracy",
+    lastName: "hicks",
+    address1: "9481 queen street",
+    city: "The Bottle",
+    state: "New York",
+    zipCode: "76288"
+  },
+  {
+    email: "charlotte.wong@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "charlotte",
+    lastName: "wong",
+    address1: "4575 stanley way",
+    city: "Handsome Eddy",
+    state: "New York",
+    zipCode: "77077"
+  },
+  {
+    email: "emile.ginnish@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "emile",
+    lastName: "ginnish",
+    address1: "2805 parliament st",
+    city: "Condemned Bar",
+    state: "New York",
+    zipCode: "778678"
+  },
+  {
+    email: "nicolas.margaret@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "nicolas",
+    lastName: "margaret",
+    address1: "1425 oak st",
+    city: "Oatmeal",
+    state: "New York",
+    zipCode: "78656"
+  },
+  {
+    email: "felix.fields@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "felix",
+    lastName: "fields",
+    address1: "3733 o'connell avenue",
+    city: "Kensealy",
+    state: "oklahoma",
+    zipCode: "79445"
+  },
+  {
+    email: "fernand.sanchez@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "fernand",
+    lastName: "sanchez",
+    address1: "8301 rue de day",
+    city: "Wegginsly",
+    state: "oklahoma",
+    zipCode: "80235"
+  },
+  {
+    email: "gene.williams@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "gene",
+    lastName: "williams",
+    address1: "501 e little york rd",
+    city: "Ardrvada",
+    state: "oklahoma",
+    zipCode: "81024"
+  },
+  {
+    email: "delphine.macdonald@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "delphine",
+    lastName: "macdonald",
+    address1: "4813 balmoral st",
+    city: "Maitland Balt",
+    state: "Arizona",
+    zipCode: "81813"
+  },
+  {
+    email: "maya.liu@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "maya",
+    lastName: "liu",
+    address1: "696 oak st",
+    city: "Vctoria",
+    state: "Arizona",
+    zipCode: "82603"
+  },
+  {
+    email: "jens.skeinen@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "jens",
+    lastName: "skeinen",
+    address1: "solbakken all√© 4438",
+    city: "Huntington",
+    state: "Arizona",
+    zipCode: "83392"
+  },
+  {
+    email: "sofia.hughes@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "sofia",
+    lastName: "hughes",
+    address1: "2368 karangahape road",
+    city: "Lower Hutt",
+    state: "Arizona",
+    zipCode: "84181"
+  },
+  {
+    email: "konsta.lammi@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "konsta",
+    lastName: "lammi",
+    address1: "7665 visiokatu",
+    city: "Southside",
+    state: "Arizona",
+    zipCode: "84970"
+  },
+  {
+    email: "cristofe.dacosta@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "cristofe",
+    lastName: "da costa",
+    address1: "6499 rua jos√© bonif√°cio ",
+    city: "Salvador",
+    state: "Missouri",
+    zipCode: "85760"
+  },
+  {
+    email: "rose.mitchell@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "rose",
+    lastName: "mitchell",
+    address1: "5571 20th ave",
+    city: "South River",
+    state: "Georgia",
+    zipCode: "86549"
+  },
+  {
+    email: "byron.ferguson@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "byron",
+    lastName: "ferguson",
+    address1: "32 hickory creek dr",
+    city: "Jacksonville",
+    state: "Georgia",
+    zipCode: "87338"
+  },
+  {
+    email: "Viviancarvalho@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "Vivian",
+    lastName: "carvalho",
+    address1: "9624 rua da paz ",
+    city: "Joy",
+    state: "Georgia",
+    zipCode: "88128"
+  },
+  {
+    email: "jasmina.steidle@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "jasmina",
+    lastName: "steidle",
+    address1: "birkenweg 60",
+    city: "Stralsund",
+    state: "Georgia",
+    zipCode: "88917"
+  },
+  {
+    email: "ulrich.rose@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "ulrich",
+    lastName: "rose",
+    address1: "mittelweg 155",
+    city: "Geneva",
+    state: "Georgia",
+    zipCode: "89706"
+  },
+  {
+    email: "ninon.legrand@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "ninon",
+    lastName: "legrand",
+    address1: "4975 rue docteur-bonhomme",
+    city: "Point Loma",
+    state: "Georgia",
+    zipCode: "90496"
+  },
+  {
+    email: "peyton.clarke@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "peyton",
+    lastName: "clarke",
+    address1: "4784 queen elizabeth ii drive",
+    city: "Westside",
+    state: "Georgia",
+    zipCode: "91285"
+  },
+  {
+    email: "matilda.cooper@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "matilda",
+    lastName: "cooper",
+    address1: "5175 st aubyn street",
+    city: "Tartunaranga",
+    state: "Alaska",
+    zipCode: "92074"
+  },
+  {
+    email: "jeff.chapman@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "jeff",
+    lastName: "chapman",
+    address1: "9385 sunset st",
+    city: "Taralgon",
+    state: "Nevada",
+    zipCode: "92863"
+  },
+  {
+    email: "scott.lawrence@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "scott",
+    lastName: "lawrence",
+    address1: "8089 james st",
+    city: "Mackalay",
+    state: "Nevada",
+    zipCode: "93653"
+  },
+  {
+    email: "valerie.phillips@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "valerie",
+    lastName: "phillips",
+    address1: "5101 miller ave",
+    city: "Port Macquarie",
+    state: "Nevada",
+    zipCode: "94444"
+  },
+  {
+    email: "freya.skoge@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "freya",
+    lastName: "skoge",
+    address1: "345 Rektorhaugen apt 7468",
+    city: "Krossen",
+    state: "Nevada",
+    zipCode: "95231"
+  },
+  {
+    email: "albert.poulsen@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "albert",
+    lastName: "poulsen",
+    address1: "5556 Nugent",
+    city: "Funton",
+    state: "Washington",
+    zipCode: "96021"
+  },
+  {
+    email: "clayton.turner@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "clayton",
+    lastName: "turner",
+    address1: "865 north road",
+    city: "Durham",
+    state: "Washington",
+    zipCode: "96810"
+  },
+  {
+    email: "deniz.karada≈ü@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "deniz",
+    lastName: "karada",
+    address1: "7935 Otter Rd",
+    city: "Folsom",
+    state: "Washington",
+    zipCode: "97599"
+  },
+  {
+    email: "eckhart.kellermann@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "eckhart",
+    lastName: "kellermann",
+    address1: "bahnhofstra√üe 9",
+    city: "Blaustein",
+    state: "Washington",
+    zipCode: "98389"
+  },
+  {
+    email: "elio.faure@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "elio",
+    lastName: "faure",
+    address1: "1160 rue da road",
+    city: "Toulouse",
+    state: "Washington",
+    zipCode: "99178"
+  },
+  {
+    email: "karl-werner.zipfel@example.com",
+    password: "Test1234",
+    userType: "User",
+    firstName: "Karl-werner",
+    lastName: "Zipfel",
+    address1: "4587 tannenweg suite 58",
+    city: "Schrobenhausen",
+    state: "Washington",
+    zipCode: "99967"
+  },
+  {
+    email: "thomas.hardcourt@example.com",
+    password: "Test1235",
+    userType: "User",
+    firstName: "thomas",
+    lastName: "harcourt",
+    address1: "8423 Peel st",
+    city: "Minto",
+    state: "Wyoming",
+    zipCode: "757254"
+  },
 ];
 
 //Adding the seed data to the DB. You need to do a node scripts/seedUser.js
