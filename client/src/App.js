@@ -48,10 +48,10 @@ class App extends React.Component {
   };
 
   handleItemDelete = item => {
-    console.log("delete button clicked")
-    const itemArray = this.state.cartItems;
+    var itemArray = this.state.cartItems;
     var priceTotal = this.state.subtotal;
     itemArray.splice(item, 1);
+    console.log("item array: ", itemArray);
     this.setState({
       cartItems: itemArray,
       subtotal: priceTotal -= item.price
