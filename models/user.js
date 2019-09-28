@@ -18,6 +18,14 @@ const userSchema = new Schema({
         enum: ['Admin', 'User', 'Producer'],
         default: 'User'
     },
+    firstName: String,
+    lastName: String,
+    address1: String,
+    address2: String,
+    city: String,
+    state: String,
+    zipCode: String,
+    vineyardFullname: String    
 })
 
 userSchema.methods = {
