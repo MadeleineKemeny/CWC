@@ -1,6 +1,7 @@
 import React from "react";
 import API from "../utils/API";
 import WineCard from "../components/Card";
+import WineDetailsModal from "./WineDetailsModal";
 import "./style.css"
 
 class Wines extends React.Component {
@@ -14,7 +15,10 @@ class Wines extends React.Component {
         region: "",     // User's region choice
         varietal: "",   // User's varietal choice
         price: "",      // User's price choice (high/medium/low)
-        textQuery: ""   // User's search terms
+        textQuery: "",  // User's search terms
+
+        showModal: false,
+        selectedWine: null
     };
 
     componentDidMount() {
@@ -86,12 +90,26 @@ class Wines extends React.Component {
             textQuery: ""
         }, () => this.loadWines());
     }
+
+    onViewDetails = (wine) => {
+        this.setState({ 
+            showModal: true,
+            selectedWine: wine
+        });
+    }
+
+    handleHideModal = () => {
+        this.setState({
+            showModal: false,
+            selectedWine: null
+        });
+    }
     
     render() {
         return (
             <div>
 
-                <form onSubmit={this.handleFormSubmit}>
+                <form onSubmit={this.handleFormSubmit} className="wineFilterForm">
 
                     {/* Color selector */}
                     <select value={this.state.color} onChange={this.handleColorChange}>
@@ -149,12 +167,17 @@ class Wines extends React.Component {
                             price = {wine.price}
                             
                             onAddToCart = {() => this.props.onAddToCart(wine)}
-                            winelink = {"/wine/" + wine._id}
-                            btnName = "View Details"
+                            onViewDetails = {() => this.onViewDetails(wine)}
                         >                                
                         </WineCard>
                     ))
-                : <div>No wines available</div>} 
+                : <div>No wines available</div>}
+                <WineDetailsModal 
+                    showModal={this.state.showModal} 
+                    hideModal={this.handleHideModal} 
+                    wine={this.state.selectedWine} 
+                    onAddToCart = {() => this.props.onAddToCart(this.state.selectedWine)}
+                />
             </div>
 
             </div>

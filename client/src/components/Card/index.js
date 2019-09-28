@@ -23,15 +23,14 @@ class WineCard extends React.Component {
                                 <div className="col-2">
                                     <button onClick={this.props.onAddToCart} className="btn btn-primary ">Add to Cart</button>
                                 </div>
-                                <div className="col-2">
-                                <Link to={this.props.winelink}>
-                                <button className="btn btn-primary">{this.props.btnName}</button>
-                                </Link>
-                                </div>
+                                {this.props.onViewDetails ? (
+                                    <div className="col-2">
+                                        <button onClick={this.props.onViewDetails} className="btn btn-primary">View Details</button>
+                                    </div>
+                                ) : ""}
                                 
                             </div>
 
-                            <a href="#" className="card-link">Customer Reviews</a>
                         </div>
                     </div>
                 </div>
