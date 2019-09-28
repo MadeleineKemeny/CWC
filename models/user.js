@@ -25,7 +25,8 @@ const userSchema = new Schema({
     city: String,
     state: String,
     zipCode: String,
-    vineyardFullname: String    
+    vineyardFullname: String,
+    accountNumber: String,    
 })
 
 userSchema.methods = {
