@@ -1,12 +1,63 @@
 import React from "react";
 import { CartCard, CartTable, CartItems, Subtotal } from "../components/CartPage";
+import OrdersAPI from "../utils/OrdersAPI"
 
 class Cart extends React.Component {
+    state = {
+        wineName: "",
+        wineQty: "",
+        winePrice: "",
+        firstNameInput: "",
+        lastNameInput: "",
+        inputAddress: "",
+        inputAddress2: "",
+        inputCity: "",
+        inputState: "",
+        inputZip: ""
+    }
+
+    // saveOrder = () => {
+    //     OrdersAPI.saveOrder({
+    //         wineName: this.state.wineName,
+    //         wineQty: this.state.wineQty,
+    //         winePrice: this.state.winePrice,
+    //         firstName: this.state.firstNameInput,
+    //         lastName: this.state.lastNameInput,
+    //         address1: this.state.inputAddress,
+    //         address2: this.state.inputAddress2,
+    //         city: this.state.inputCity,
+    //         state: this.state.inputState,
+    //         zip: this.state.inputZip
+    //     })
+    // }
+
+    handleCheckoutClick = event => {
+        event.preventDefault()
+        // this.setState({showCheckout: true})
+    }
+
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+        console.log(value)
+    };
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        this.saveOrder();       
+    };
+
+    handleSaveProducts = () => {
+        
+    }
+    
     render() {
         return (
             <div className="scroll">
                 <CartCard>
-                    <h1 class="card-title">Cart: {this.props.cartItems.length} items</h1>
+                    <h1 className="card-title">Cart: {this.props.cartItems.length} items</h1>
                     {this.props.cartItems.length > 0 ?
                         (<CartTable>
                             {this.props.cartItems.map(cartItem => (
@@ -15,35 +66,44 @@ class Cart extends React.Component {
                                     quantity="1"
                                     price={"$" + cartItem.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
                                 >
+                                <i className="far fa-trash-alt" onClick={() => this.props.onDelete(cartItem)}></i>
                                 </CartItems>
                             ))}
-                            <Subtotal />
+                            <Subtotal 
+                            totalQty = {this.props.cartItems.length}
+                            totalPrice = {"$" + this.props.subtotal.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                            onClick = {
+                                this.handleCheckoutClick
+                                // this.setState({showCheckout: true})
+                            }
+                            />
                         </CartTable>
 
                         ) : <div>Looks a little empty. Browse our collection of wines.</div>}
                 </CartCard>
                 <CartCard>
-                    <h1 class="card-title">Shipping Information</h1>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="firstNameInput" placeholder="First Name" />
+                    <div className="paymentSection">
+                    <h1 className="card-title">Shipping Information</h1>
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <input type="text" className="form-control" name="firstNameInput" value={this.state.firstNameInput} placeholder="First Name" />
                         </div>
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="LastNameInput" placeholder="Last Name" />
+                        <div className="form-group col-md-6">
+                            <input type="text" className="form-control" name="lastNameInput" value={this.state.lastNameInput} placeholder="Last Name" />
                         </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Street Address" />
+                    <div className="form-group">
+                        <input type="text" className="form-control" name="inputAddress" value={this.state.inputAddress}  placeholder="Street Address" />
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" />
+                    <div className="form-group">
+                        <input type="text" className="form-control" name="inputAddress2" value={this.state.inputAddress2}  placeholder="Apartment, studio, or floor" />
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="inputCity" placeholder="City" />
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <input type="text" className="form-control" name="inputCity" value={this.state.inputCity} placeholder="City" />
                         </div>
-                        <div class="form-group col-md-4">
-                            <select id="inputState" class="form-control">
+                        <div className="form-group col-md-4">
+                            <select name="inputState" className="form-control">
                                 <option selected>State</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -98,27 +158,27 @@ class Cart extends React.Component {
                                 <option value="WY">Wyoming</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-2">
-                            <input type="text" class="form-control" id="inputZip" placeholder="Zip Code" />
+                        <div className="form-group col-md-2">
+                            <input type="text" className="form-control" name="inputZip" value={this.state.inputZip} placeholder="Zip Code" />
                         </div>
                         </div>
-                        <h1 class="card-title">Payment Information</h1>
-                        <div class="form-group row">
-                            <label for="cardholderInput" class="col-sm-2 col-form-label">Cardholder Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="cardholderInput" />
+                        <h1 className="card-title">Payment Information</h1>
+                        <div className="form-group row">
+                            <label for="cardholderInput" className="col-sm-2 col-form-label">Cardholder Name</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control" id="cardholderInput" />
                                 </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="cardNumberInput" class="col-sm-2 col-form-label">Card Number</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="cardNumberInput" />
+                        <div className="form-group row">
+                            <label for="cardNumberInput" className="col-sm-2 col-form-label">Card Number</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control" id="cardNumberInput" />
                                 </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="expMthInput" class="col-sm-2 col-form-label">Expiration Month</label>
-                                <div class="col-sm-2">
-                                    <select id="expMthInput" class="form-control">
+                        <div className="form-group row">
+                            <label for="expMthInput" className="col-sm-2 col-form-label">Expiration Month</label>
+                                <div className="col-sm-2">
+                                    <select id="expMthInput" className="form-control">
                                     <option selected>Month</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -134,9 +194,9 @@ class Cart extends React.Component {
                                     <option value="12">12</option>
                                     </select>
                                 </div>
-                            <label for="expYrInput" class="col-sm-2 col-form-label">Expiration Year</label>
-                                <div class="col-sm-2">
-                                <select id="iexpYrInput" class="form-control">
+                            <label for="expYrInput" className="col-sm-2 col-form-label">Expiration Year</label>
+                                <div className="col-sm-2">
+                                <select id="expYrInput" className="form-control">
                                     <option selected>Year</option>
                                     <option value="2019">2019</option>
                                     <option value="2020">2020</option>
@@ -152,13 +212,14 @@ class Cart extends React.Component {
                                     <option value="2030">2030</option>
                                     </select>
                                 </div>
-                            <label for="securityCodeInput" class="col-sm-2 col-form-label">Security Code</label>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" id="securityCodeInput" />
+                            <label for="securityCodeInput" className="col-sm-2 col-form-label">Security Code</label>
+                                <div className="col-sm-2">
+                                    <input type="text" className="form-control" id="securityCodeInput" />
                                 </div>
                         </div>
                         <button className="btn btn-primary">Complete Order</button>
-            </CartCard>
+                        </div>
+            </CartCard>    
             </div>
                                     )
                                 }

@@ -26,10 +26,10 @@ export function CartItems(props) {
     return (
             <tbody>
                 <tr>
-                    <td scope="row">{props.productName}</td>
+                    <td>{props.productName}</td>
                     <td>{props.quantity}</td>
                     <td>{props.price}</td>
-                    <td><i class="far fa-trash-alt"></i></td>
+                    <td>{props.children}</td>
                 </tr>
             </tbody>
     )
@@ -39,7 +39,7 @@ export function Subtotal(props) {
     return (
         <tbody>
             <tr>
-                <td scope="row">Order Total</td>
+                <td>Order Total</td>
                 <td>{props.totalQty}</td>
                 <td>{props.totalPrice}</td>
                 <td><button className="btn btn-primary">Checkout</button></td>

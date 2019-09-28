@@ -28,7 +28,8 @@ import img6 from "./img/vineyard-misty.png";
 class App extends React.Component {
   state = {
     User: null,
-    cartItems: []
+    cartItems: [],
+    subtotal: 0
   };
 
   updateGlobalState = (name, val) => {
@@ -38,10 +39,25 @@ class App extends React.Component {
   handleAddToCart = wine => {
     console.log("add wine to cart", wine);
     var exisitingCart = this.state.cartItems;
+    var priceTotal = this.state.subtotal;  
+
     this.setState({
-      cartItems: [...exisitingCart, wine]
+      cartItems: [...exisitingCart, wine],
+      subtotal: priceTotal += wine.price
     });
   };
+
+  handleItemDelete = item => {
+    const previousCart = this.state.cartItems; //this is an array
+    let indexItem = previousCart.indexOf(item);
+    var priceTotal = this.state.subtotal;
+    let itemRemoval = previousCart.splice(indexItem, 1);
+    this.setState({
+      cartItems: previousCart,
+      subtotal: priceTotal -= item.price
+    })
+  }
+
 
   render() {
     return (
@@ -50,7 +66,7 @@ class App extends React.Component {
           <TopNav cartItems={this.state.cartItems}></TopNav>
           {window.location.pathname === "/admin" ? <NavAdmin /> : <span></span>}
           <div id="CWClogo">
-            <img src="reverseLogo.png" width="150" height="176" />
+            <img src="reverseLogo.png" width="150" height="176" alt=""/>
           </div>
           <Carousel
             className="myCarousel"
@@ -96,7 +112,8 @@ class App extends React.Component {
                 <Route
                   exact
                   path="/wines"
-                  render={() => <Wines onAddToCart={this.handleAddToCart} />}
+                  render={() => <Wines 
+                    onAddToCart={this.handleAddToCart} />}
                 />
                 <Route
                   exact
@@ -111,7 +128,7 @@ class App extends React.Component {
                 <Route
                   exact
                   path="/cart"
-                  render={() => <Cart cartItems={this.state.cartItems} />}
+                  render={() => <Cart cartItems={this.state.cartItems} subtotal={this.state.subtotal} onDelete={this.handleItemDelete} />}
                 />
                 <Route exact path="/producers" component={OurProducers} />
                 <Route exact path="/blogs" component={Blogs} />

@@ -165,6 +165,7 @@ class Wines extends React.Component {
                             shortDescription = {wine.shortDescription}
                             volume = {wine.volume}
                             price = {wine.price}
+                            
                             onAddToCart = {() => this.props.onAddToCart(wine)}
                             onViewDetails = {() => this.onViewDetails(wine)}
                         >                                
