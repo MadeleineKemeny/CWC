@@ -13,7 +13,7 @@ class Confirmation extends React.Component {
                 <CartCard>
                     <h3>Thank you for your order!</h3>
                     <p>We hope you enjoy your purchase.</p>
-                    <p>Your order total is {"$" + this.props.subtotal.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+                    <p>Your order total is {"$" + this.props.orderTotal.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
                     <Link to="/wines">
                     <button className="btn btn-primary" onClick={() => this.props.clearCart()}>Back to Browse</button>
                     </Link>

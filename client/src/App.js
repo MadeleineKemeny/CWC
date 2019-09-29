@@ -32,6 +32,7 @@ class App extends React.Component {
     cartItems: [],
     subtotal: 0,
     shippingCost: 19.99,
+    tax: 0,
     orderTotal: 0
   };
 
@@ -42,11 +43,15 @@ class App extends React.Component {
   handleAddToCart = wine => {
     console.log("add wine to cart", wine);
     var exisitingCart = this.state.cartItems;
-    var priceTotal = this.state.subtotal;  
-
+    var priceTotal = this.state.subtotal; 
+    var newSubtotal = priceTotal += wine.price; 
+    var taxTotal = newSubtotal * .1;
+    
     this.setState({
       cartItems: [...exisitingCart, wine],
-      subtotal: priceTotal += wine.price
+      subtotal: newSubtotal,
+      tax: taxTotal,
+      orderTotal: newSubtotal + taxTotal + this.state.shippingCost
     });
   };
 
@@ -66,17 +71,6 @@ class App extends React.Component {
       cartItems: [],
       subtotal: 0
     })
-  }
-
-  handleOrderTotal = () => {
-    var priceTotal = this.state.subtotal;
-    var shipping = this.state.shippingCost;
-    var tax = this.state.subtotal * .10;
-    const total = priceTotal + shipping + tax;
-    this.setState({
-      orderTotal: total
-    })
-
   }
 
   render() {
@@ -148,11 +142,11 @@ class App extends React.Component {
                 <Route
                   exact
                   path="/cart"
-                  render={() => <Cart cartItems={this.state.cartItems} subtotal={this.state.subtotal} shippingCost={this.state.shippingCost} onDelete={this.handleItemDelete} orderTotal={this.handleOrderTotal}/>}
+                  render={() => <Cart cartItems={this.state.cartItems} subtotal={this.state.subtotal} shippingCost={this.state.shippingCost} onDelete={this.handleItemDelete} tax={this.state.tax} orderTotal={this.state.orderTotal}/>}
                 />
                 <Route 
                 exact path="/cart/confirmation" 
-                render={() => <Confirmation subtotal={this.state.subtotal} clearCart={this.handleClearCart}/>}
+                render={() => <Confirmation orderTotal={this.state.orderTotal} clearCart={this.handleClearCart}/>}
                 />
                 <Route exact path="/producers" component={OurProducers} />
                 <Route exact path="/blogs" component={Blogs} />
