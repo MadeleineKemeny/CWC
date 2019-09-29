@@ -8,1463 +8,2493 @@ mongoose.connect(
   'mongodb://localhost/CDCDB', { useNewUrlParser: true }
 );
 
-const seedUser = [
+const seedUsers = [
   {
     email: "jenine.ellis@gmail.com",
     password: "Test1234",
     userType: "Admin",
     firstName: "Jenine",
-    lastName: "Ellis",
+    lastName: "Ellis"
   },
   {
     email: "matthew.heimark@gmail.com",
     password: "Test1234",
     userType: "Admin",
     firstName: "Matthew",
-    lastName: "Heimark",
+    lastName: "Heimark"
   },
   {
     email: "mkskoly@gmail.com",
     password: "Test1234",
     userType: "Admin",
     firstName: "Marta",
-    lastName: "Skoly",
+    lastName: "Skoly"
   },
   {
     email: "madeleinekemeny@gmail.com",
     password: "Test1234",
     userType: "Admin",
     firstName: "Madeleine",
-    lastName: "Kemeny",
+    lastName: "Kemeny"
   },
   {
-    email: "info@Acacia.com",
+    email: "info@1000Stories.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Acacia"
+    vineyardFullname: "1000 Stories",
+    accountNumber: "21821"
   },
   {
-    email: "wholesale@bespokecollection.com",
+    email: "info@Apothic.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Blackbird Vineyards"
+    vineyardFullname: "Apothic",
+    accountNumber: "19134"
   },
   {
-    email: "avv@avvwine.com",
+    email: "info@BaronHerzog.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Alexander Valley Vineyards"
+    vineyardFullname: "Baron Herzog",
+    accountNumber: "159"
   },
   {
-    email: "info@alexandriecellars.com",
+    email: "info@Bonterra.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Alexandrie Cellars"
-  },
-  {
-    email: "info@alexandriecellars.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Alexandrie Cellars"
-  },
-  {
-    email: "orders@cellar8wine.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Allure"
-  },
-  {
-    email: "info@Alpha.Omega.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Alpha Omega"
-  },
-  {
-    email: "info@Angeline.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Angeline"
-  },
-  {
-    email: "info@Angels&Cowboys.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Angels & Cowboys"
-  },
-  {
-    email: "info@Apriori.Cellar.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Apriori Cellar"
-  },
-  {
-    email: "info@Arietta.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Arietta"
-  },
-  {
-    email: "info@Armanino.Family.Cellars.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Armanino Family Cellars"
-  },
-  {
-    email: "info@Artesa.VineyardsandWinery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Artesa Vineyards and Winery"
-  },
-  {
-    email: "info@Aubert.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Aubert"
-  },
-  {
-    email: "info@AVA.Grace.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "AVA Grace"
-  },
-  {
-    email: "info@Baileyana.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Baileyana"
-  },
-  {
-    email: "info@Balletto.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Balletto Winery"
-  },
-  {
-    email: "info@Band.of.Vintners.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Band of Vintners"
-  },
-  {
-    email: "info@Banshee.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Banshee"
-  },
-  {
-    email: "info@Baron.Herzog.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Baron Herzog"
-  },
-  {
-    email: "info@Carmel.Road.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Barrymore by Carmel Road"
-  },
-  {
-    email: "info@Beaulieu.Vineyard.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Beaulieu Vineyard"
-  },
-  {
-    email: "info@Bedrock.Wine.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Bedrock Wine Company"
-  },
-  {
-    email: "info@Benziger.Family.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Benziger Family Winery"
-  },
-  {
-    email: "info@Beringer.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Beringer Vineyards"
-  },
-  {
-    email: "info@Bernardus.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Bernardus"
-  },
-  {
-    email: "info@Blackbird.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Blackbird Vineyards"
-  },
-  {
-    email: "info@Blanc.de.Bleu.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Blanc de Bleu"
-  },
-  {
-    email: "info@Bogle.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Bogle Vineyards"
-  },
-  {
-    email: "info@Bonny.Doon.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Bonny Doon"
-  },
-  {
-    email: "info@Bonterra.",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Bonterra"
-  },
-  {
-    email: "info@Bread&Butter.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Bread & Butter"
-  },
-  {
-    email: "info@Breathless.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Breathless"
-  },
-  {
-    email: "info@Brick.Barn.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Brick Barn"
-  },
-  {
-    email: "info@Ca'Momi.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Ca'Momi"
-  },
-  {
-    email: "info@CADE.Estate.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "CADE Estate"
-  },
-  {
-    email: "info@Cakebread.Cellars.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Cakebread Cellars"
-  },
-  {
-    email: "info@Calera.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Calera"
-  },
-  {
-    email: "info@Cannonball.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Cannonball"
-  },
-  {
-    email: "info@Capture.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Capture"
-  },
-  {
-    email: "info@Caraccioli.Cellars.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Caraccioli Cellars"
-  },
-  {
-    email: "info@Carol.Shelton.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Carol Shelton"
+    vineyardFullname: "Bonterra",
+    accountNumber: "107"
   },
   {
     email: "info@Cashmere.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Cashmere"
-  },
-  {
-    email: "info@Castoro.Cellars.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Castoro Cellars"
-  },
-  {
-    email: "info@Caymus.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Caymus"
-  },
-  {
-    email: "info@Cellars.33.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Cellars 33"
-  },
-  {
-    email: "info@Chalk.Hill.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Chalk Hill Winery"
-  },
-  {
-    email: "info@Chandon.California.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Chandon California"
-  },
-  {
-    email: "info@Chappellet.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Chappellet Winery"
-  },
-  {
-    email: "info@Chateau.St.Jean.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Chateau St. Jean"
-  },
-  {
-    email: "info@Chloe.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Chloe"
-  },
-  {
-    email: "info@Chronic.Cellars.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Chronic Cellars"
-  },
-  {
-    email: "info@Cliff.Lede.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Cliff Lede Vineyards"
+    vineyardFullname: "Cashmere",
+    accountNumber: "46171"
   },
   {
     email: "info@Cline.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Cline"
+    vineyardFullname: "Cline",
+    accountNumber: "407"
   },
   {
-    email: "info@Conundrum.com",
+    email: "info@Desparada.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Conundrum"
+    vineyardFullname: "Desparada",
+    accountNumber: "22145"
   },
   {
-    email: "info@Cupcake.Vineyards.com",
+    email: "info@EdnaValleyVineyard.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Cupcake Vineyards"
-  },
-  {
-    email: "info@Curran.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Curran"
-  },
-  {
-    email: "info@DAOU.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "DAOU Vineyards"
-  },
-  {
-    email: "info@Dark.Horse.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Dark Horse"
-  },
-  {
-    email: "info@Dashe.Cellars.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Dashe Cellars"
-  },
-  {
-    email: "info@Decoy.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Decoy"
-  },
-  {
-    email: "info@DeLoach.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "DeLoach Vineyards"
-  },
-  {
-    email: "info@Domaine.Carneros.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Domaine Carneros"
-  },
-  {
-    email: "info@Domaine.Laurier.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Domaine Laurier"
-  },
-  {
-    email: "info@Dominus.Estate.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Dominus Estate"
-  },
-  {
-    email: "info@Duckhorn.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Duckhorn Vineyards"
-  },
-  {
-    email: "info@Dunn.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Dunn Vineyards"
-  },
-  {
-    email: "info@Eberle.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Eberle Winery"
-  },
-  {
-    email: "info@Edmunds.St.John.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Edmunds St. John"
-  },
-  {
-    email: "info@Elizabeth.Rose.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Elizabeth Rose"
-  },
-  {
-    email: "info@Elke.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Elke"
-  },
-  {
-    email: "info@Emmolo.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Emmolo"
-  },
-  {
-    email: "info@En.Tirage.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "En Tirage"
-  },
-  {
-    email: "info@Etude.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Etude"
-  },
-  {
-    email: "info@Failla.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Failla"
-  },
-  {
-    email: "info@Far.Niente.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Far Niente"
-  },
-  {
-    email: "info@Ferrari-Carano.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Ferrari-Carano"
+    vineyardFullname: "Edna Valley Vineyard",
+    accountNumber: "85"
   },
   {
     email: "info@Flowers.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Flowers"
+    vineyardFullname: "Flowers",
+    accountNumber: "3531"
   },
   {
-    email: "info@Flying.Goat.Cellars.com",
+    email: "info@GnekowFamilyWinery.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Flying Goat Cellars"
+    vineyardFullname: "Gnekow Family Winery",
+    accountNumber: "20699"
   },
   {
-    email: "info@Forman.com",
+    email: "info@HartfordCourt.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Forman"
+    vineyardFullname: "Hartford Court",
+    accountNumber: "2801"
   },
   {
-    email: "info@Francis.Ford.Coppola.Winery.com",
+    email: "info@JVineyards&Winery.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Francis Ford Coppola Winery"
+    vineyardFullname: "J Vineyards & Winery",
+    accountNumber: "1914"
   },
   {
-    email: "info@Frank.Family.Vineyards.com",
+    email: "info@KapcsandyFamilyWinery.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Frank Family Vineyards"
+    vineyardFullname: "Kapcsandy Family Winery",
+    accountNumber: "19505"
   },
   {
-    email: "info@Freemark.Abbey.com",
+    email: "info@LeP'titPaysan.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Freemark Abbey"
-  },
-  {
-    email: "info@Frey.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Frey"
-  },
-  {
-    email: "info@Frog's.Leap.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Frog's Leap"
-  },
-  {
-    email: "info@Gamble.Family.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Gamble Family Vineyards"
-  },
-  {
-    email: "info@Gehricke.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Gehricke"
-  },
-  {
-    email: "info@Geyser.Peak.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Geyser Peak"
-  },
-  {
-    email: "info@Ghost.Block.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Ghost Block"
-  },
-  {
-    email: "info@CavesNVineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Gloria Ferrer Caves & Vineyards"
-  },
-  {
-    email: "info@Gnekow.Family.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Gnekow Family Winery"
-  },
-  {
-    email: "info@Goldeneye.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Goldeneye"
-  },
-  {
-    email: "info@Grgich.Hills.Estate.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Grgich Hills Estate"
-  },
-  {
-    email: "info@Hagafen.",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Hagafen"
-  },
-  {
-    email: "info@Hahn.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Hahn Winery"
-  },
-  {
-    email: "info@Hall.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Hall"
-  },
-  {
-    email: "info@Hanzell.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Hanzell Vineyards"
-  },
-  {
-    email: "info@Hartford.Court.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Hartford Court"
-  },
-  {
-    email: "info@Hearst.Ranch.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Hearst Ranch"
-  },
-  {
-    email: "info@Heitz.Cellar.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Heitz Cellar"
-  },
-  {
-    email: "info@Hendry.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Hendry"
-  },
-  {
-    email: "info@High.Valley.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "High Valley Vineyards"
-  },
-  {
-    email: "info@Honig.Vineyard.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Honig Vineyard & Winery"
-  },
-  {
-    email: "info@Idlewild.Wines.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Idlewild Wines"
-  },
-  {
-    email: "info@Illumination.Wine.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Illumination Wine"
-  },
-  {
-    email: "info@Inglenook.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Inglenook"
-  },
-  {
-    email: "info@Inman.Family.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Inman Family"
-  },
-  {
-    email: "info@Iron.Horse.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Iron Horse"
-  },
-  {
-    email: "info@Isabel.Mondavi.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Isabel Mondavi"
-  },
-  {
-    email: "info@J.Vineyards.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "J Vineyards & Winery"
-  },
-  {
-    email: "info@JLohrVineyards&Wines.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "J. Lohr Vineyards &amp; Wines"
-  },
-  {
-    email: "info@JaM.Cellars.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "JaM Cellars"
-  },
-  {
-    email: "info@JFJ.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "JFJ Winery"
-  },
-  {
-    email: "info@JNSQ.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "JNSQ"
-  },
-  {
-    email: "info@Joel.Gott.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Joel Gott"
-  },
-  {
-    email: "info@Joseph.Phelps.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Joseph Phelps Vineyards"
-  },
-  {
-    email: "info@Josh.Cellars.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Josh Cellars"
-  },
-  {
-    email: "info@Justin.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Justin"
-  },
-  {
-    email: "info@Kendall-Jackson.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Kendall-Jackson"
-  },
-  {
-    email: "info@Kenwood.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Kenwood"
-  },
-  {
-    email: "info@Klinker.Brick.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Klinker Brick"
-  },
-  {
-    email: "info@Korbel.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Korbel"
-  },
-  {
-    email: "info@La.Crema.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "La Crema"
-  },
-  {
-    email: "info@Laguna.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Laguna Winery"
-  },
-  {
-    email: "info@Lail.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Lail Vineyards"
-  },
-  {
-    email: "info@Le.P'tit.Paysan.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Le P'tit Paysan"
-  },
-  {
-    email: "info@Ledge.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Ledge"
-  },
-  {
-    email: "info@Leviathan.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Leviathan"
-  },
-  {
-    email: "info@Lichen.Estate.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Lichen Estate"
-  },
-  {
-    email: "info@Lieu.Dit.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Lieu Dit"
-  },
-  {
-    email: "info@Lioco.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Lioco"
-  },
-  {
-    email: "info@Liquid.Farm.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Liquid Farm"
-  },
-  {
-    email: "info@Lloyd.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Lloyd"
-  },
-  {
-    email: "info@LOLA.Wines.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "LOLA Wines"
-  },
-  {
-    email: "info@Long.Meadow.Ranch.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Long Meadow Ranch"
-  },
-  {
-    email: "info@Louis.Pommery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Louis Pommery"
-  },
-  {
-    email: "info@Lucas&Lewellen.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Lucas & Lewellen Vineyards"
+    vineyardFullname: "Le P'tit Paysan",
+    accountNumber: "19949"
   },
   {
     email: "info@Lucinda&Millie.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Lucinda & Millie"
-  },
-  {
-    email: "info@MacMurray.Ranch.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "MacMurray Ranch"
-  },
-  {
-    email: "info@MacRostie.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "MacRostie"
-  },
-  {
-    email: "info@Malene.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Malene"
-  },
-  {
-    email: "info@Marcassin.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Marcassin"
-  },
-  {
-    email: "info@Margerum.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Margerum"
-  },
-  {
-    email: "info@Marietta.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Marietta"
-  },
-  {
-    email: "info@Martin.Ray.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Martin Ray"
-  },
-  {
-    email: "info@Matanzas.Creek.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Matanzas Creek Winery"
-  },
-  {
-    email: "info@Matchbook.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Matchbook"
-  },
-  {
-    email: "info@Mayacamas.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Mayacamas"
-  },
-  {
-    email: "info@McIntyre.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "McIntyre Vineyards"
+    vineyardFullname: "Lucinda & Millie",
+    accountNumber: "19245"
   },
   {
     email: "info@Meiomi.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Meiomi"
+    vineyardFullname: "Meiomi",
+    accountNumber: "20092"
   },
   {
-    email: "info@Morgan.Winery.com",
+    email: "info@OpusOne.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Morgan Winery"
+    vineyardFullname: "Opus One",
+    accountNumber: "2100"
   },
   {
-    email: "info@Mount.Veeder.Winery.com",
+    email: "info@PepperwoodGrove.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Mount Veeder Winery"
+    vineyardFullname: "Pepperwood Grove",
+    accountNumber: "3012"
   },
   {
-    email: "info@Mumm.Napa.com",
+    email: "info@RaymondVineyard.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Mumm Napa"
+    vineyardFullname: "Raymond Vineyard",
+    accountNumber: "619"
   },
   {
-    email: "info@Newton.Vineyard.com",
+    email: "info@RutherfordRanch.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Newton Vineyard"
-  },
-  {
-    email: "info@Nickel&Nickel.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Nickel & Nickel"
-  },
-  {
-    email: "info@O'Shaughnessy.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "O'Shaughnessy"
-  },
-  {
-    email: "info@Odette.Estate.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Odette Estate"
-  },
-  {
-    email: "info@ONEHOPE.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "ONEHOPE"
-  },
-  {
-    email: "info@Opus.One.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Opus One"
-  },
-  {
-    email: "info@Orin.Swift.Cellars.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Orin Swift Cellars"
-  },
-  {
-    email: "info@Oro.Bello.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Oro Bello"
-  },
-  {
-    email: "info@OZV.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "OZV"
-  },
-  {
-    email: "info@Pahlmeyer.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Pahlmeyer"
-  },
-  {
-    email: "info@Paraduxx.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Paraduxx"
-  },
-  {
-    email: "info@Parducci.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Parducci"
-  },
-  {
-    email: "info@Patz&Hall.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Patz & Hall"
-  },
-  {
-    email: "info@Paul.Dolan.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Paul Dolan Vineyards"
-  },
-  {
-    email: "info@Paul.Hobbs.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Paul Hobbs"
-  },
-  {
-    email: "info@Pedroncelli.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Pedroncelli Winery"
-  },
-  {
-    email: "info@Pepperwood.Grove.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Pepperwood Grove"
-  },
-  {
-    email: "info@Philip.Togni.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Philip Togni"
-  },
-  {
-    email: "info@Piper.Sonoma.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Piper Sonoma"
-  },
-  {
-    email: "info@PlumpJack.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "PlumpJack Winery"
-  },
-  {
-    email: "info@Pomelo.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Pomelo"
-  },
-  {
-    email: "info@Quilt.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Quilt"
-  },
-  {
-    email: "info@Quivira.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Quivira Vineyards"
-  },
-  {
-    email: "info@Rabble.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Rabble"
-  },
-  {
-    email: "info@Rack&Riddle.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Rack & Riddle"
-  },
-  {
-    email: "info@Raeburn.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Raeburn"
-  },
-  {
-    email: "info@Ramey.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Ramey"
-  },
-  {
-    email: "info@Raymond.Vineyard.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Raymond Vineyard"
-  },
-  {
-    email: "info@Red.Car.Wine.Company.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Red Car Wine Company"
-  },
-  {
-    email: "info@Ridge.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Ridge"
-  },
-  {
-    email: "info@Riverbench.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Riverbench"
-  },
-  {
-    email: "info@Robert.Mondavi.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Robert Mondavi"
-  },
-  {
-    email: "info@Robert.Sinskey.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Robert Sinskey Vineyards"
-  },
-  {
-    email: "info@Rodney.Strong.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Rodney Strong Vineyards"
-  },
-  {
-    email: "info@Roederer.Estate.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Roederer Estate"
-  },
-  {
-    email: "info@Rombauer.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Rombauer Vineyards"
-  },
-  {
-    email: "info@Roots.Run.Deep.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Roots Run Deep"
-  },
-  {
-    email: "info@Rosenblum.Cellars.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Rosenblum Cellars"
-  },
-  {
-    email: "info@Round.Pond.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Round Pond"
-  },
-  {
-    email: "info@Saintsbury.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Saintsbury"
-  },
-  {
-    email: "info@Sanford.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Sanford Winery"
-  },
-  {
-    email: "info@Sans.Liege.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Sans Liege"
-  },
-  {
-    email: "info@Scattered.Peaks.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Scattered Peaks"
-  },
-  {
-    email: "info@Scharffenberger.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Scharffenberger"
-  },
-  {
-    email: "info@Scholium.Project.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Scholium Project"
-  },
-  {
-    email: "info@Schramsberg.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Schramsberg Vineyards"
-  },
-  {
-    email: "info@Screaming.Eagle.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Screaming Eagle"
-  },
-  {
-    email: "info@Scribe.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Scribe"
+    vineyardFullname: "Rutherford Ranch",
+    accountNumber: "2106"
   },
   {
     email: "info@SeaGlass.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "SeaGlass"
+    vineyardFullname: "SeaGlass",
+    accountNumber: "20036"
   },
   {
-    email: "info@Sean.Minor.com",
+    email: "info@SobonEstateWinery.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Sean Minor"
+    vineyardFullname: "Sobon Estate Winery",
+    accountNumber: "1096"
   },
   {
-    email: "info@Seghesio.Family.com",
+    email: "info@TalleyVineyards.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Seghesio Family Vineyards"
-  },
-  {
-    email: "info@Shafer.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Shafer Vineyards"
-  },
-  {
-    email: "info@Silver.Oak.Alexander.Valley.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Silver Oak Alexander Valley"
-  },
-  {
-    email: "info@Silver.Oak.Napa.Valley.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Silver Oak Napa Valley"
-  },
-  {
-    email: "info@Simple.Life.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Simple Life"
-  },
-  {
-    email: "info@Smoke.Tree.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Smoke Tree"
-  },
-  {
-    email: "info@Sobon.Estate.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Sobon Estate Winery"
-  },
-  {
-    email: "info@Sonoma-Cutrer.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Sonoma-Cutrer Vineyards"
-  },
-  {
-    email: "info@Spellbound.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Spellbound"
-  },
-  {
-    email: "info@St.Supery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "St. Supery Estate Vineyard & Winery"
-  },
-  {
-    email: "info@Stag's.Leap.Wine.Cellars.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Stag's Leap Wine Cellars"
-  },
-  {
-    email: "info@Stags'.Leap.Winery.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Stags' Leap Winery"
-  },
-  {
-    email: "info@Stolpman.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Stolpman Vineyards"
-  },
-  {
-    email: "info@Stonestreet.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Stonestreet"
-  },
-  {
-    email: "info@Tablas.Creek.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Tablas Creek Vineyard"
-  },
-  {
-    email: "info@Talbott.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Talbott"
-  },
-  {
-    email: "info@Tenshen.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Tenshen"
-  },
-  {
-    email: "info@The.Fableist.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "The Fableist"
-  },
-  {
-    email: "info@Prisoner.Wine.Company.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "The Prisoner Wine Company"
-  },
-  {
-    email: "info@Withers.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "The Withers"
-  },
-  {
-    email: "info@Three.Sticks.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Three Sticks"
-  },
-  {
-    email: "info@Toad.Hollow.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Toad Hollow"
-  },
-  {
-    email: "info@Trefethen.Vineyards.com",
-    password: "Test1234",
-    userType: "Producer",
-    vineyardFullname: "Trefethen Vineyards"
+    vineyardFullname: "Talley Vineyards",
+    accountNumber: "1098"
   },
   {
     email: "info@Troublemaker.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Troublemaker"
+    vineyardFullname: "Troublemaker",
+    accountNumber: "20028"
   },
   {
-    email: "info@Tuck.Beckstoffer.com",
+    email: "info@WenteVineyards.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Tuck Beckstoffer"
+    vineyardFullname: "Wente Vineyards",
+    accountNumber: "1387"
   },
   {
-    email: "info@Turnbull.com",
+    email: "info@AbyAcacia.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Turnbull"
+    vineyardFullname: "A by Acacia",
+    accountNumber: "17218"
   },
   {
-    email: "info@Turtle.Rock.Vineyards.com",
+    email: "info@AprioriCellar.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Turtle Rock Vineyards"
+    vineyardFullname: "Apriori Cellar",
+    accountNumber: "21811"
   },
   {
-    email: "info@Venge.Vineyards.com",
+    email: "info@BarrymorebyCarmelRoad.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Venge Vineyards"
+    vineyardFullname: "Barrymore by Carmel Road",
+    accountNumber: "19411"
   },
   {
-    email: "info@Verdad.com",
+    email: "info@Breathless.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Verdad"
+    vineyardFullname: "Breathless",
+    accountNumber: "22469"
+  },
+  {
+    email: "info@Caymus.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Caymus",
+    accountNumber: "14"
+  },
+  {
+    email: "info@Conundrum.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Conundrum",
+    accountNumber: "6244"
+  },
+  {
+    email: "info@DiBruno.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Di Bruno",
+    accountNumber: "20559"
+  },
+  {
+    email: "info@ElizabethRose.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Elizabeth Rose",
+    accountNumber: "20630"
+  },
+  {
+    email: "info@FlyingGoatCellars.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Flying Goat Cellars",
+    accountNumber: "21134"
+  },
+  {
+    email: "info@Goldeneye.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Goldeneye",
+    accountNumber: "3787"
+  },
+  {
+    email: "info@HearstRanch.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Hearst Ranch",
+    accountNumber: "21172"
+  },
+  {
+    email: "info@J.LohrVineyards&amp;Wines.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "J. Lohr Vineyards &amp; Wines",
+    accountNumber: "630"
+  },
+  {
+    email: "info@Kendall-Jackson.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Kendall-Jackson",
+    accountNumber: "409"
+  },
+  {
+    email: "info@Ledge.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Ledge",
+    accountNumber: "21031"
+  },
+  {
+    email: "info@MacRostie.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "MacRostie",
+    accountNumber: "534"
+  },
+  {
+    email: "info@MiraWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Mira Winery",
+    accountNumber: "20235"
+  },
+  {
+    email: "info@OrinSwiftCellars.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Orin Swift Cellars",
+    accountNumber: "19825"
+  },
+  {
+    email: "info@PhilipTogni.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Philip Togni",
+    accountNumber: "6888"
+  },
+  {
+    email: "info@RedCarWineCompany.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Red Car Wine Company",
+    accountNumber: "18682"
+  },
+  {
+    email: "info@Saintsbury.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Saintsbury",
+    accountNumber: "535"
+  },
+  {
+    email: "info@SeanMinor.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Sean Minor",
+    accountNumber: "18908"
+  },
+  {
+    email: "info@Sonoma-CutrerVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Sonoma-Cutrer Vineyards",
+    accountNumber: "34"
+  },
+  {
+    email: "info@Tangent.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Tangent",
+    accountNumber: "18462"
+  },
+  {
+    email: "info@TruchardEstate.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Truchard Estate",
+    accountNumber: "39"
+  },
+  {
+    email: "info@ZDWines.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "ZD Wines",
+    accountNumber: "384"
+  },
+  {
+    email: "info@AERENAbyBlackbirdVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "AERENA by Blackbird Vineyards",
+    accountNumber: "42334"
+  },
+  {
+    email: "info@Arietta.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Arietta",
+    accountNumber: "7083"
+  },
+  {
+    email: "info@BeaulieuVineyard.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Beaulieu Vineyard",
+    accountNumber: "10"
+  },
+  {
+    email: "info@Ca'Momi.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Ca'Momi",
+    accountNumber: "21659"
+  },
+  {
+    email: "info@Cellars33.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Cellars 33",
+    accountNumber: "45373"
+  },
+  {
+    email: "info@CrossbarnbyPaulHobbs.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Crossbarn by Paul Hobbs",
+    accountNumber: "19126"
+  },
+  {
+    email: "info@diatom.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "diatom",
+    accountNumber: "23315"
+  },
+  {
+    email: "info@Elke.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Elke",
+    accountNumber: "4224"
+  },
+  {
+    email: "info@FoleyJohnson.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Foley Johnson",
+    accountNumber: "20696"
+  },
+  {
+    email: "info@GrgichHillsEstate.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Grgich Hills Estate",
+    accountNumber: "118"
+  },
+  {
+    email: "info@HeitzCellar.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Heitz Cellar",
+    accountNumber: "23"
+  },
+  {
+    email: "info@JaMCellars.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "JaM Cellars",
+    accountNumber: "19194"
+  },
+  {
+    email: "info@Kenwood.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Kenwood",
+    accountNumber: "27"
+  },
+  {
+    email: "info@LichenEstate.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Lichen Estate",
+    accountNumber: "20542"
+  },
+  {
+    email: "info@Margerum.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Margerum",
+    accountNumber: "18695"
+  },
+  {
+    email: "info@MorganWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Morgan Winery",
+    accountNumber: "394"
+  },
+  {
+    email: "info@OZV.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "OZV",
+    accountNumber: "20110"
+  },
+  {
+    email: "info@PiperSonoma.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Piper Sonoma",
+    accountNumber: "513"
+  },
+  {
+    email: "info@Riverbench.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Riverbench",
+    accountNumber: "21688"
+  },
+  {
+    email: "info@SanfordWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Sanford Winery",
+    accountNumber: "31"
+  },
+  {
+    email: "info@Sebastiani.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Sebastiani",
+    accountNumber: "87"
+  },
+  {
+    email: "info@Spellbound.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Spellbound",
+    accountNumber: "17792"
+  },
+  {
+    email: "info@Terrad'Oro.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Terra d'Oro",
+    accountNumber: "18586"
+  },
+  {
+    email: "info@TuckBeckstoffer.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Tuck Beckstoffer",
+    accountNumber: "19581"
   },
   {
     email: "info@Vigilance.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Vigilance"
+    vineyardFullname: "Vigilance",
+    accountNumber: "20477"
   },
   {
-    email: "info@Vina.Robles.com",
+    email: "info@AlexanderValleyVineyards.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Vina Robles"
+    vineyardFullname: "Alexander Valley Vineyards",
+    accountNumber: "342"
   },
   {
-    email: "info@Walter.Hansel.com",
+    email: "info@ArtesaVineyardsandWinery.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Walter Hansel"
+    vineyardFullname: "Artesa Vineyards and Winery",
+    accountNumber: "1839"
+  },
+  {
+    email: "info@BedrockWineCompany.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Bedrock Wine Company",
+    accountNumber: "18995"
+  },
+  {
+    email: "info@CADEEstate.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "CADE Estate",
+    accountNumber: "19253"
+  },
+  {
+    email: "info@ChalkHillWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Chalk Hill Winery",
+    accountNumber: "16"
+  },
+  {
+    email: "info@CupcakeVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Cupcake Vineyards",
+    accountNumber: "18417"
+  },
+  {
+    email: "info@DomaineCarneros.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Domaine Carneros",
+    accountNumber: "45"
+  },
+  {
+    email: "info@Emmolo.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Emmolo",
+    accountNumber: "4697"
+  },
+  {
+    email: "info@FrancisFordCoppolaWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Francis Ford Coppola Winery",
+    accountNumber: "2879"
+  },
+  {
+    email: "info@GrothVineyards&Winery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Groth Vineyards & Winery",
+    accountNumber: "22"
+  },
+  {
+    email: "info@Hendry.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Hendry",
+    accountNumber: "3207"
+  },
+  {
+    email: "info@JFJWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "JFJ Winery",
+    accountNumber: "20756"
+  },
+  {
+    email: "info@KlinkerBrick.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Klinker Brick",
+    accountNumber: "18699"
+  },
+  {
+    email: "info@LieuDit.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Lieu Dit",
+    accountNumber: "20472"
+  },
+  {
+    email: "info@Marietta.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Marietta",
+    accountNumber: "88"
+  },
+  {
+    email: "info@MummNapa.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Mumm Napa",
+    accountNumber: "43"
+  },
+  {
+    email: "info@Pahlmeyer.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Pahlmeyer",
+    accountNumber: "3636"
+  },
+  {
+    email: "info@PlumpJackWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "PlumpJack Winery",
+    accountNumber: "3799"
+  },
+  {
+    email: "info@RobertMondavi.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Robert Mondavi",
+    accountNumber: "30"
+  },
+  {
+    email: "info@SansLiege.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Sans Liege",
+    accountNumber: "17678"
+  },
+  {
+    email: "info@SeghesioFamilyVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Seghesio Family Vineyards",
+    accountNumber: "481"
+  },
+  {
+    email: "info@St.SuperyEstateVineyard&Winery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "St. Supery Estate Vineyard & Winery",
+    accountNumber: "480"
+  },
+  {
+    email: "info@TheDreamingTree.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "The Dreaming Tree",
+    accountNumber: "19318"
+  },
+  {
+    email: "info@Turnbull.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Turnbull",
+    accountNumber: "188"
+  },
+  {
+    email: "info@VinaRobles.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Vina Robles",
+    accountNumber: "17808"
+  },
+  {
+    email: "info@AlexandrieCellars.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Alexandrie Cellars",
+    accountNumber: "46185"
+  },
+  {
+    email: "info@Aubert.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Aubert",
+    accountNumber: "17883"
+  },
+  {
+    email: "info@BelleGlos.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Belle Glos",
+    accountNumber: "6147"
+  },
+  {
+    email: "info@CakebreadCellars.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Cakebread Cellars",
+    accountNumber: "13"
+  },
+  {
+    email: "info@ChandonCalifornia.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Chandon California",
+    accountNumber: "44"
+  },
+  {
+    email: "info@Curran.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Curran",
+    accountNumber: "18370"
+  },
+  {
+    email: "info@DomaineLaurier.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Domaine Laurier",
+    accountNumber: "2932"
+  },
+  {
+    email: "info@EnTirage.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "En Tirage",
+    accountNumber: "42176"
+  },
+  {
+    email: "info@FrankFamilyVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Frank Family Vineyards",
+    accountNumber: "6887"
+  },
+  {
+    email: "info@GundlachBundschu.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Gundlach Bundschu",
+    accountNumber: "466"
+  },
+  {
+    email: "info@HonigVineyard&Winery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Honig Vineyard & Winery",
+    accountNumber: "78"
+  },
+  {
+    email: "info@JNSQ.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "JNSQ",
+    accountNumber: "45259"
+  },
+  {
+    email: "info@Korbel.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Korbel",
+    accountNumber: "333"
+  },
+  {
+    email: "info@Lloyd.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Lloyd",
+    accountNumber: "20748"
+  },
+  {
+    email: "info@MartinRay.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Martin Ray",
+    accountNumber: "89"
+  },
+  {
+    email: "info@NewtonVineyard.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Newton Vineyard",
+    accountNumber: "61"
+  },
+  {
+    email: "info@Paraduxx.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Paraduxx",
+    accountNumber: "6007"
+  },
+  {
+    email: "info@Pomelo.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Pomelo",
+    accountNumber: "17828"
+  },
+  {
+    email: "info@RobertSinskeyVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Robert Sinskey Vineyards",
+    accountNumber: "2232"
+  },
+  {
+    email: "info@ScatteredPeaks.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Scattered Peaks",
+    accountNumber: "42178"
+  },
+  {
+    email: "info@SequoiaGroveVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Sequoia Grove Vineyards",
+    accountNumber: "32"
+  },
+  {
+    email: "info@Stag'sLeapWineCellars.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Stag's Leap Wine Cellars",
+    accountNumber: "623"
+  },
+  {
+    email: "info@TheFableist.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "The Fableist",
+    accountNumber: "25440"
+  },
+  {
+    email: "info@TurtleRockVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Turtle Rock Vineyards",
+    accountNumber: "21292"
   },
   {
     email: "info@Wayfarer.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Wayfarer"
+    vineyardFullname: "Wayfarer",
+    accountNumber: "20454"
   },
   {
-    email: "info@Wente.Vineyards.com",
+    email: "info@Allure.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "Wente Vineyards"
+    vineyardFullname: "Allure",
+    accountNumber: "19343"
   },
   {
-    email: "info@ZD.Wines.com",
+    email: "info@AustinHope.com",
     password: "Test1234",
     userType: "Producer",
-    vineyardFullname: "ZD Wines"
+    vineyardFullname: "Austin Hope",
+    accountNumber: "18323"
   },
+  {
+    email: "info@BenzigerFamilyWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Benziger Family Winery",
+    accountNumber: "11"
+  },
+  {
+    email: "info@Calera.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Calera",
+    accountNumber: "371"
+  },
+  {
+    email: "info@ChappelletWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Chappellet Winery",
+    accountNumber: "172"
+  },
+  {
+    email: "info@DAOUVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "DAOU Vineyards",
+    accountNumber: "19549"
+  },
+  {
+    email: "info@DominusEstate.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Dominus Estate",
+    accountNumber: "1792"
+  },
+  {
+    email: "info@Etude.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Etude",
+    accountNumber: "3786"
+  },
+  {
+    email: "info@Frog'sLeap.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Frog's Leap",
+    accountNumber: "21"
+  },
+  {
+    email: "info@Hagafen.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Hagafen",
+    accountNumber: "1081"
+  },
+  {
+    email: "info@IdlewildWines.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Idlewild Wines",
+    accountNumber: "21020"
+  },
+  {
+    email: "info@JoelGott.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Joel Gott",
+    accountNumber: "17974"
+  },
+  {
+    email: "info@LaCrema.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "La Crema",
+    accountNumber: "410"
+  },
+  {
+    email: "info@LOLAWines.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "LOLA Wines",
+    accountNumber: "24032"
+  },
+  {
+    email: "info@MatanzasCreekWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Matanzas Creek Winery",
+    accountNumber: "471"
+  },
+  {
+    email: "info@Nickel&Nickel.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Nickel & Nickel",
+    accountNumber: "4011"
+  },
+  {
+    email: "info@Parducci.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Parducci",
+    accountNumber: "1682"
+  },
+  {
+    email: "info@QuiviraVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Quivira Vineyards",
+    accountNumber: "476"
+  },
+  {
+    email: "info@RodneyStrongVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Rodney Strong Vineyards",
+    accountNumber: "52"
+  },
+  {
+    email: "info@Scharffenberger.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Scharffenberger",
+    accountNumber: "17261"
+  },
+  {
+    email: "info@ShaferVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Shafer Vineyards",
+    accountNumber: "482"
+  },
+  {
+    email: "info@Stags'LeapWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Stags' Leap Winery",
+    accountNumber: "57"
+  },
+  {
+    email: "info@ThePrisonerWineCompany.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "The Prisoner Wine Company",
+    accountNumber: "18681"
+  },
+  {
+    email: "info@VaughnDuffy.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Vaughn Duffy",
+    accountNumber: "21109"
+  },
+  {
+    email: "info@AlphaOmega.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Alpha Omega",
+    accountNumber: "20252"
+  },
+  {
+    email: "info@AVAGrace.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "AVA Grace",
+    accountNumber: "41888"
+  },
+  {
+    email: "info@BeringerVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Beringer Vineyards",
+    accountNumber: "51"
+  },
+  {
+    email: "info@CambriaWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Cambria Winery",
+    accountNumber: "516"
+  },
+  {
+    email: "info@ChateauMontelena.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Chateau Montelena",
+    accountNumber: "2149"
+  },
+  {
+    email: "info@DarkHorse.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Dark Horse",
+    accountNumber: "20875"
+  },
+  {
+    email: "info@DuckhornVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Duckhorn Vineyards",
+    accountNumber: "19"
+  },
+  {
+    email: "info@Failla.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Failla",
+    accountNumber: "19191"
+  },
+  {
+    email: "info@GambleFamilyVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Gamble Family Vineyards",
+    accountNumber: "20265"
+  },
+  {
+    email: "info@HahnWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Hahn Winery",
+    accountNumber: "2447"
+  },
+  {
+    email: "info@IlluminationWine.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Illumination Wine",
+    accountNumber: "20591"
+  },
+  {
+    email: "info@JordanVineyard&Winery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Jordan Vineyard & Winery",
+    accountNumber: "469"
+  },
+  {
+    email: "info@LagunaWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Laguna Winery",
+    accountNumber: "18987"
+  },
+  {
+    email: "info@LongMeadowRanch.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Long Meadow Ranch",
+    accountNumber: "3124"
+  },
+  {
+    email: "info@Matchbook.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Matchbook",
+    accountNumber: "18000"
+  },
+  {
+    email: "info@NobleVines.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Noble Vines ",
+    accountNumber: "20513"
+  },
+  {
+    email: "info@Patz&Hall.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Patz & Hall",
+    accountNumber: "4315"
+  },
+  {
+    email: "info@Rabble.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Rabble",
+    accountNumber: "20478"
+  },
+  {
+    email: "info@RoedererEstate.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Roederer Estate",
+    accountNumber: "997"
+  },
+  {
+    email: "info@ScholiumProject.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Scholium Project",
+    accountNumber: "19195"
+  },
+  {
+    email: "info@ShannonRidge.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Shannon Ridge",
+    accountNumber: "18015"
+  },
+  {
+    email: "info@StolpmanVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Stolpman Vineyards",
+    accountNumber: "17669"
+  },
+  {
+    email: "info@TheWithers.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "The Withers",
+    accountNumber: "25430"
+  },
+  {
+    email: "info@Verdad.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Verdad",
+    accountNumber: "19262"
+  },
+  {
+    email: "info@AndrewMurrayVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Andrew Murray Vineyards",
+    accountNumber: "395"
+  },
+  {
+    email: "info@Baileyana.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Baileyana",
+    accountNumber: "2221"
+  },
+  {
+    email: "info@BlackbirdVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Blackbird Vineyards",
+    accountNumber: "18359"
+  },
+  {
+    email: "info@Cannonball.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Cannonball",
+    accountNumber: "20209"
+  },
+  {
+    email: "info@ChateauSt.Jean.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Chateau St. Jean",
+    accountNumber: "15"
+  },
+  {
+    email: "info@DasheCellars.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Dashe Cellars",
+    accountNumber: "1799"
+  },
+  {
+    email: "info@DunnVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Dunn Vineyards",
+    accountNumber: "110"
+  },
+  {
+    email: "info@FarNiente.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Far Niente",
+    accountNumber: "615"
+  },
+  {
+    email: "info@GaryFarrell.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Gary Farrell",
+    accountNumber: "4451"
+  },
+  {
+    email: "info@Hall.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Hall",
+    accountNumber: "17918"
+  },
+  {
+    email: "info@InmanFamily.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Inman Family",
+    accountNumber: "19012"
+  },
+  {
+    email: "info@JosephPhelpsVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Joseph Phelps Vineyards",
+    accountNumber: "25"
+  },
+  {
+    email: "info@LailVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Lail Vineyards",
+    accountNumber: "4809"
+  },
+  {
+    email: "info@Longboard.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Longboard",
+    accountNumber: "18337"
+  },
+  {
+    email: "info@Matthiasson.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Matthiasson",
+    accountNumber: "18595"
+  },
+  {
+    email: "info@O'Shaughnessy.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "O'Shaughnessy",
+    accountNumber: "18366"
+  },
+  {
+    email: "info@PaulDolanVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Paul Dolan Vineyards",
+    accountNumber: "18886"
+  },
+  {
+    email: "info@Rack&Riddle.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Rack & Riddle",
+    accountNumber: "20707"
+  },
+  {
+    email: "info@RombauerVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Rombauer Vineyards",
+    accountNumber: "90"
+  },
+  {
+    email: "info@SchramsbergVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Schramsberg Vineyards",
+    accountNumber: "636"
+  },
+  {
+    email: "info@SilverOakAlexanderValley.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Silver Oak Alexander Valley",
+    accountNumber: "19143"
+  },
+  {
+    email: "info@Stonestreet.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Stonestreet",
+    accountNumber: "411"
+  },
+  {
+    email: "info@ThreeSticks.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Three Sticks",
+    accountNumber: "19513"
+  },
+  {
+    email: "info@AngelenoWineCo.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Angeleno Wine Co",
+    accountNumber: "44690"
+  },
+  {
+    email: "info@BallettoWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Balletto Winery",
+    accountNumber: "20178"
+  },
+  {
+    email: "info@BlancdeBleu.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Blanc de Bleu",
+    accountNumber: "20926"
+  },
+  {
+    email: "info@CaraccioliCellars.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Caraccioli Cellars",
+    accountNumber: "20395"
+  },
+  {
+    email: "info@Chloe.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Chloe",
+    accountNumber: "21315"
+  },
+  {
+    email: "info@Decoy.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Decoy",
+    accountNumber: "18221"
+  },
+  {
+    email: "info@EberleWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Eberle Winery",
+    accountNumber: "2224"
+  },
+  {
+    email: "info@Faust.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Faust",
+    accountNumber: "17956"
+  },
+  {
+    email: "info@Gehricke.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Gehricke",
+    accountNumber: "21217"
+  },
+  {
+    email: "info@HannaWinery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Hanna Winery",
+    accountNumber: "1896"
+  },
+  {
+    email: "info@IronHorse.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Iron Horse",
+    accountNumber: "468"
+  },
+  {
+    email: "info@JoshCellars.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Josh Cellars",
+    accountNumber: "19260"
+  },
+  {
+    email: "info@LangeTwins.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "LangeTwins",
+    accountNumber: "19344"
+  },
+  {
+    email: "info@LouisPommery.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Louis Pommery",
+    accountNumber: "42169"
+  },
+  {
+    email: "info@Mayacamas.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Mayacamas",
+    accountNumber: "1239"
+  },
+  {
+    email: "info@OdetteEstate.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Odette Estate",
+    accountNumber: "21718"
+  },
+  {
+    email: "info@PaulHobbs.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Paul Hobbs",
+    accountNumber: "387"
+  },
+  {
+    email: "info@Raeburn.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Raeburn",
+    accountNumber: "20667"
+  },
+  {
+    email: "info@RootsRunDeep.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Roots Run Deep",
+    accountNumber: "18698"
+  },
+  {
+    email: "info@ScreamingEagle.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Screaming Eagle",
+    accountNumber: "3802"
+  },
+  {
+    email: "info@SilverOakNapaValley.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Silver Oak Napa Valley",
+    accountNumber: "3522"
+  },
+  {
+    email: "info@TablasCreekVineyard.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Tablas Creek Vineyard",
+    accountNumber: "2157"
+  },
+  {
+    email: "info@ToadHollow.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Toad Hollow",
+    accountNumber: "1250"
+  },
+  {
+    email: "info@Angels&Cowboys.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Angels & Cowboys",
+    accountNumber: "20692"
+  },
+  {
+    email: "info@BandofVintners.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Band of Vintners",
+    accountNumber: "42194"
+  },
+  {
+    email: "info@BonnyDoon.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Bonny Doon",
+    accountNumber: "629"
+  },
+  {
+    email: "info@CarolShelton.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Carol Shelton",
+    accountNumber: "7098"
+  },
+  {
+    email: "info@ChronicCellars.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Chronic Cellars",
+    accountNumber: "21310"
+  },
+  {
+    email: "info@DeLoachVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "DeLoach Vineyards",
+    accountNumber: "463"
+  },
+  {
+    email: "info@EdmundsSt.John.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Edmunds St. John",
+    accountNumber: "416"
+  },
+  {
+    email: "info@Ferrari-Carano.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Ferrari-Carano",
+    accountNumber: "408"
+  },
+  {
+    email: "info@GloriaFerrerCaves&Vineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Gloria Ferrer Caves & Vineyards",
+    accountNumber: "42"
+  },
+  {
+    email: "info@HanzellVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Hanzell Vineyards",
+    accountNumber: "1247"
+  },
+  {
+    email: "info@IsabelMondavi.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Isabel Mondavi",
+    accountNumber: "17793"
+  },
+  {
+    email: "info@Justin.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Justin",
+    accountNumber: "488"
+  },
+  {
+    email: "info@LayerCake.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Layer Cake",
+    accountNumber: "18483"
+  },
+  {
+    email: "info@Lucas&LewellenVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Lucas & Lewellen Vineyards",
+    accountNumber: "22255"
+  },
+  {
+    email: "info@McIntyreVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "McIntyre Vineyards",
+    accountNumber: "19242"
+  },
+  {
+    email: "info@ONEHOPE.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "ONEHOPE",
+    accountNumber: "19293"
+  },
+  {
+    email: "info@PejuProvince.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Peju Province",
+    accountNumber: "4732"
+  },
+  {
+    email: "info@Ramey.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Ramey",
+    accountNumber: "18292"
+  },
+  {
+    email: "info@RosenblumCellars.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Rosenblum Cellars",
+    accountNumber: "91"
+  },
+  {
+    email: "info@Scribe.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Scribe",
+    accountNumber: "21025"
+  },
+  {
+    email: "info@SimpleLife.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Simple Life",
+    accountNumber: "20919"
+  },
+  {
+    email: "info@Talbott.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Talbott",
+    accountNumber: "123"
+  },
+  {
+    email: "info@TrefethenVineyards.com",
+    password: "Test1234",
+    userType: "Producer",
+    vineyardFullname: "Trefethen Vineyards",
+    accountNumber: "38"
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ,
   {
     email: "brooke.dunn@example.com",
     password: "Test1234",
@@ -2300,21 +3330,18 @@ const seedUser = [
     city: "Minto",
     state: "Wyoming",
     zipCode: "757254"
-  },
+  }
 ];
 
 //Adding the seed data to the DB. You need to do a node scripts/seedUser.js
-const seedAPI = async () => {
-  try {
-    const isDelete = await db.User.remove({})
-    if (isDelete) {
-      seedUser.map(user => {
-        db.User.create(user)
-        return user;
-      })
-    }
-  } catch (error) {
-    console.log(error.message)
-  }
-}
-seedAPI();
+db.User
+  .deleteMany({})
+  .then(() => db.User.collection.insertMany(seedUsers))
+  .then(data => {
+    console.log(data.result.n + " User records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.log(err);
+    process.exit(1);
+  })
