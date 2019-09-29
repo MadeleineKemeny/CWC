@@ -26,7 +26,9 @@ export function CartItems(props) {
     return (
             <tbody>
                 <tr>
-                    <td>{props.productName}</td>
+                    <td>
+                    <button onClick={props.onViewDetails} class="btn btn-link">{props.productName}</button>
+                    </td>
                     <td>{props.quantity}</td>
                     <td>{props.price}</td>
                     <td>{props.children}</td>

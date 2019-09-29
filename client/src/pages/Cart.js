@@ -1,5 +1,6 @@
 import React from "react";
 import { CartCard, CartTable, CartItems, Subtotal } from "../components/CartPage";
+import WineDetailsModal from "./WineDetailsModal";
 import OrdersAPI from "../utils/OrdersAPI"
 
 class Cart extends React.Component {
@@ -13,7 +14,23 @@ class Cart extends React.Component {
         inputAddress2: "",
         inputCity: "",
         inputState: "",
-        inputZip: ""
+        inputZip: "",
+        showModal: false,
+        selectedWine: null
+    }
+
+    onViewDetails = (wine) => {
+        this.setState({ 
+            showModal: true,
+            selectedWine: wine
+        });
+    }
+
+    handleHideModal = () => {
+        this.setState({
+            showModal: false,
+            selectedWine: null
+        });
     }
 
     // saveOrder = () => {
@@ -65,6 +82,7 @@ class Cart extends React.Component {
                                     productName={cartItem.name}
                                     quantity="1"
                                     price={"$" + cartItem.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                                    onViewDetails = {() => this.onViewDetails(cartItem)}
                                 >
                                 <i className="far fa-trash-alt" onClick={() => this.props.onDelete(cartItem)}></i>
                                 </CartItems>
@@ -219,8 +237,16 @@ class Cart extends React.Component {
                         </div>
                         <button className="btn btn-primary">Complete Order</button>
                         </div>
-            </CartCard>    
+            </CartCard>
+            <WineDetailsModal 
+            showModal={this.state.showModal} 
+            hideModal={this.handleHideModal} 
+            wine={this.state.selectedWine} 
+            ></WineDetailsModal>    
             </div>
+            
+
+
                                     )
                                 }
                             }
