@@ -91,6 +91,9 @@ class Cart extends React.Component {
                             <Subtotal 
                             totalQty = {this.props.cartItems.length}
                             totalPrice = {"$" + this.props.subtotal.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                            shippingCost = {this.props.shippingCost}
+                            tax = {(this.props.subtotal * .10).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                            orderTotal = {this.props.orderTotal}
                             onClick = {
                                 this.handleCheckoutClick
                                 // this.setState({showCheckout: true})

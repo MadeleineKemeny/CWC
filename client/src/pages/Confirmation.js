@@ -2,10 +2,14 @@ import React from "react";
 import { CartCard } from "../components/CartPage";
 import { Link } from "react-router-dom";
 
+const confirmStyle = {
+    textAlign: 'center'
+}
+
 class Confirmation extends React.Component {
     render() {
         return (
-            <div>
+            <div style={confirmStyle}>
                 <CartCard>
                     <h3>Thank you for your order!</h3>
                     <p>We hope you enjoy your purchase.</p>

@@ -30,7 +30,9 @@ class App extends React.Component {
   state = {
     User: null,
     cartItems: [],
-    subtotal: 0
+    subtotal: 0,
+    shippingCost: 19.99,
+    orderTotal: 0
   };
 
   updateGlobalState = (name, val) => {
@@ -64,6 +66,17 @@ class App extends React.Component {
       cartItems: [],
       subtotal: 0
     })
+  }
+
+  handleOrderTotal = () => {
+    var priceTotal = this.state.subtotal;
+    var shipping = this.state.shippingCost;
+    var tax = this.state.subtotal * .10;
+    const total = priceTotal + shipping + tax;
+    this.setState({
+      orderTotal: total
+    })
+
   }
 
   render() {
@@ -135,7 +148,7 @@ class App extends React.Component {
                 <Route
                   exact
                   path="/cart"
-                  render={() => <Cart cartItems={this.state.cartItems} subtotal={this.state.subtotal} onDelete={this.handleItemDelete} />}
+                  render={() => <Cart cartItems={this.state.cartItems} subtotal={this.state.subtotal} shippingCost={this.state.shippingCost} onDelete={this.handleItemDelete} orderTotal={this.handleOrderTotal}/>}
                 />
                 <Route 
                 exact path="/cart/confirmation" 
