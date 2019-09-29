@@ -59,10 +59,14 @@ class App extends React.Component {
     const previousCart = this.state.cartItems; //this is an array
     let indexItem = previousCart.indexOf(item);
     var priceTotal = this.state.subtotal;
+    var newSubtotal = priceTotal -= item.price;
+    var taxTotal = newSubtotal * .1;
     let itemRemoval = previousCart.splice(indexItem, 1);
     this.setState({
       cartItems: previousCart,
-      subtotal: priceTotal -= item.price
+      subtotal: newSubtotal,
+      tax: taxTotal,
+      orderTotal: newSubtotal + taxTotal + this.state.shippingCost
     })
   }
 
