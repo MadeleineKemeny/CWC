@@ -220,3 +220,12 @@ th {
 .wineCard {
     width: 300px;
 }
+
+.btn, .btn-primary {
+    background-color: rgb(83, 6, 6);
+    border-color: rgb(83, 6, 6);
+}
+
+.btn:hover {
+    background-color: rgb(145, 1, 1);
+}

@@ -21,7 +21,7 @@ class WineCard extends React.Component {
 
                             <div className="form-row">
                                 <div className="col-2">
-                                    <button onClick={this.props.onAddToCart} className="btn btn-primary ">Add to Cart</button>
+                                    <button onClick={this.props.onAddToCart} className="btn btn-primary">Add to Cart</button>
                                 </div>
                                 {this.props.onViewDetails ? (
                                     <div className="col-2">
