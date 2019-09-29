@@ -24,6 +24,7 @@ import img3 from "./img/sunset-field1.png";
 import img4 from "./img/vineyard-mountains.png";
 import img5 from "./img/vineyard-sunny1.png";
 import img6 from "./img/vineyard-misty.png";
+import Confirmation from "./pages/Confirmation"
 
 class App extends React.Component {
   state = {
@@ -58,6 +59,12 @@ class App extends React.Component {
     })
   }
 
+  handleClearCart = () => {
+    this.setState({
+      cartItems: [],
+      subtotal: 0
+    })
+  }
 
   render() {
     return (
@@ -129,6 +136,10 @@ class App extends React.Component {
                   exact
                   path="/cart"
                   render={() => <Cart cartItems={this.state.cartItems} subtotal={this.state.subtotal} onDelete={this.handleItemDelete} />}
+                />
+                <Route 
+                exact path="/cart/confirmation" 
+                render={() => <Confirmation subtotal={this.state.subtotal} clearCart={this.handleClearCart}/>}
                 />
                 <Route exact path="/producers" component={OurProducers} />
                 <Route exact path="/blogs" component={Blogs} />
