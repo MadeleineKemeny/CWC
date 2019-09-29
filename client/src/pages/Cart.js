@@ -1,6 +1,8 @@
 import React from "react";
 import { CartCard, CartTable, CartItems, Subtotal } from "../components/CartPage";
-import OrdersAPI from "../utils/OrdersAPI"
+import WineDetailsModal from "./WineDetailsModal";
+import OrdersAPI from "../utils/OrdersAPI";
+import { Link } from "react-router-dom";
 
 class Cart extends React.Component {
     state = {
@@ -13,23 +15,42 @@ class Cart extends React.Component {
         inputAddress2: "",
         inputCity: "",
         inputState: "",
-        inputZip: ""
+        inputZip: "",
+        showModal: false,
+        selectedWine: null
     }
 
-    // saveOrder = () => {
-    //     OrdersAPI.saveOrder({
-    //         wineName: this.state.wineName,
-    //         wineQty: this.state.wineQty,
-    //         winePrice: this.state.winePrice,
-    //         firstName: this.state.firstNameInput,
-    //         lastName: this.state.lastNameInput,
-    //         address1: this.state.inputAddress,
-    //         address2: this.state.inputAddress2,
-    //         city: this.state.inputCity,
-    //         state: this.state.inputState,
-    //         zip: this.state.inputZip
-    //     })
-    // }
+    onViewDetails = (wine) => {
+        this.setState({ 
+            showModal: true,
+            selectedWine: wine,
+            wineName: wine.name,
+            wineQty: "1",
+            winePrice: wine.price
+        });
+    }
+
+    handleHideModal = () => {
+        this.setState({
+            showModal: false,
+            selectedWine: null
+        });
+    }
+
+    saveOrder = () => {
+        OrdersAPI.saveOrder({
+            wineName: this.state.wineName,
+            wineQty: this.state.wineQty,
+            winePrice: this.state.winePrice,
+            firstName: this.state.firstNameInput,
+            lastName: this.state.lastNameInput,
+            address1: this.state.inputAddress,
+            address2: this.state.inputAddress2,
+            city: this.state.inputCity,
+            state: this.state.inputState,
+            zip: this.state.inputZip
+        })
+    }
 
     handleCheckoutClick = event => {
         event.preventDefault()
@@ -49,9 +70,6 @@ class Cart extends React.Component {
         this.saveOrder();       
     };
 
-    handleSaveProducts = () => {
-        
-    }
     
     render() {
         return (
@@ -65,6 +83,7 @@ class Cart extends React.Component {
                                     productName={cartItem.name}
                                     quantity="1"
                                     price={"$" + cartItem.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                                    onViewDetails = {() => this.onViewDetails(cartItem)}
                                 >
                                 <i className="far fa-trash-alt" onClick={() => this.props.onDelete(cartItem)}></i>
                                 </CartItems>
@@ -72,6 +91,9 @@ class Cart extends React.Component {
                             <Subtotal 
                             totalQty = {this.props.cartItems.length}
                             totalPrice = {"$" + this.props.subtotal.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                            shippingCost = {this.props.shippingCost}
+                            tax = {(this.props.subtotal * .10).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                            orderTotal = {this.props.orderTotal}
                             onClick = {
                                 this.handleCheckoutClick
                                 // this.setState({showCheckout: true})
@@ -217,10 +239,21 @@ class Cart extends React.Component {
                                     <input type="text" className="form-control" id="securityCodeInput" />
                                 </div>
                         </div>
+                        <Link to="/cart/confirmation">
                         <button className="btn btn-primary">Complete Order</button>
+                        </Link>
+                        
                         </div>
-            </CartCard>    
+            </CartCard>
+            <WineDetailsModal 
+            showModal={this.state.showModal} 
+            hideModal={this.handleHideModal} 
+            wine={this.state.selectedWine} 
+            ></WineDetailsModal>    
             </div>
+            
+
+
                                     )
                                 }
                             }

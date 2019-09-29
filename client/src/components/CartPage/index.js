@@ -26,7 +26,9 @@ export function CartItems(props) {
     return (
             <tbody>
                 <tr>
-                    <td>{props.productName}</td>
+                    <td>
+                    <button onClick={props.onViewDetails} class="btn btn-link">{props.productName}</button>
+                    </td>
                     <td>{props.quantity}</td>
                     <td>{props.price}</td>
                     <td>{props.children}</td>
@@ -39,11 +41,30 @@ export function Subtotal(props) {
     return (
         <tbody>
             <tr>
-                <td>Order Total</td>
+                <td>Merchandise Total</td>
                 <td>{props.totalQty}</td>
                 <td>{props.totalPrice}</td>
-                <td><button className="btn btn-primary">Checkout</button></td>
+                <td></td>
             </tr>
+            <tr>
+                <td>Shipping &amp; Handling</td>
+                <td></td>
+                <td>${props.shippingCost}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Tax</td>
+                <td></td>
+                <td>${props.tax}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Order Total</td>
+                <td></td>
+                <td>${props.orderTotal}</td>
+                <td></td>
+            </tr>
+            <button className="btn btn-primary">Checkout</button>
         </tbody>
     )
 }
