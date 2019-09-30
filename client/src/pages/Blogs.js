@@ -16,6 +16,7 @@ class Blogs extends Component {
             <img
               src="http://crushed.com/wp-content/uploads/2014/04/alderphoto.jpg"
               id="blogger"
+              alt="alderYarrowPic"
             />
             Alder Yarrow is a San Francisco high-tech consultant and wine geek
             who runs Vinography, perhaps the Web&rsquo;s most popular and
@@ -39,6 +40,7 @@ class Blogs extends Component {
             <img
               src="https://intoxreport.files.wordpress.com/2014/11/goode1.jpg"
               id="blogger"
+              alt="jamieGoodePic"
             />
             Jamie Goode, a Brit, writes for several well-known English wine
             magazines and runs the Wine Anorak website, which offers excellent
@@ -59,6 +61,7 @@ class Blogs extends Component {
             <img
               src="https://media.winefolly.com/madeline-decanting-wine.jpg"
               id="blogger"
+              alt="madelinePucketettePic"
             />
             Madeline Pucketette, Cofounder and Wine Expert on Wine Folly,
             started writing for people who want to know more about wine but they
@@ -79,6 +82,7 @@ class Blogs extends Component {
             <img
               src="https://grapecollective.com/media/article/image/cache/720x337-center/w/i/wine_7.jpg"
               id="blogger"
+              alt="tylerColemanPic"
             />
             Dr. Vino, a.k.a. Tyler Colman, really is a doctor—he wrote his
             doctoral dissertation at Northwestern University about the political
@@ -102,6 +106,7 @@ class Blogs extends Component {
             <img
               src="https://organicwineexchange.com/wp-content/uploads/2012/10/Alice-Feiring-Portrait-300x300.jpg"
               id="blogger"
+              alt="aliceFeiringPic"
             />
             The wine and travel columnist for Time magazine, Alice Feiring uses
             her blog to share her thoughts on everything from biodynamic
@@ -123,6 +128,7 @@ class Blogs extends Component {
             <img
               src="http://3.bp.blogspot.com/-HM5XIkBKYKs/Uk61M-S9nxI/AAAAAAAAn1s/WoHRWwSsQwI/s1600/Bertrand+Celce.jpg"
               id="blogger"
+              alt="bertrandCelcePic"
             />
             French photographer Bertrand Celce travels the wine routes of his
             country and records his encounters in both vivid pictures and

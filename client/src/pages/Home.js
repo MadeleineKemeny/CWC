@@ -13,6 +13,7 @@ class Home extends React.Component {
             <img
               src="https://www.parisperfect.com/blog/wp-content/uploads/2012/09/Alsace-Grapes-Wine.jpg"
               id="grapes"
+              alt="grapes"
             />
             We have compiled a cellar of the California wines we love the most,
             and we hope you will love them, too. It is our pleasure to introduce
