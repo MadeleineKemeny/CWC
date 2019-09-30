@@ -64,7 +64,7 @@ export function Subtotal(props) {
                 <td>${props.orderTotal}</td>
                 <td></td>
             </tr>
-            <button className="btn btn-primary">Checkout</button>
+            <p>If you're ready to purchase the content of your cart, please scroll down to complete the checkout process.</p>
         </tbody>
     )
 }

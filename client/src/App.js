@@ -1,32 +1,32 @@
-import About from "./pages/About";
-import Blogs from "./pages/Blogs";
-import BottomNav from "./components/BottomNav";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Cart from "./pages/Cart";
-import FAQs from "./pages/FAQs";
-import Home from "./pages/Home";
-import { Link } from "react-router-dom";
-import Login from "./pages/Admin";
-import NavAdmin from "./components/Admin/NavAdmin";
-import Nav from "react-bootstrap/Nav";
-import NoMatch from "./pages/NoMatch";
-import OurProducers from "./pages/OurProducers";
 import React from "react";
-import TopNav from "./components/TopNav";
-import Terms from "./pages/Terms";
-import Wines from "./pages/Wines";
-import WineDetails from "./pages/WineDetails";
-
-import "./Carousel.css";
+import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import "./Carousel.css";
 import img1 from "./img/sunrise-field.png";
 import img2 from "./img/vineyard-misty-pond.png";
 import img3 from "./img/sunset-field1.png";
 import img4 from "./img/vineyard-mountains.png";
 import img5 from "./img/vineyard-sunny1.png";
 import img6 from "./img/vineyard-misty.png";
+
+import About from "./pages/About";
+import Blogs from "./pages/Blogs";
+import BottomNav from "./components/BottomNav";
+import Cart from "./pages/Cart";
 import Confirmation from "./pages/Confirmation";
+import FAQs from "./pages/FAQs";
+import Home from "./pages/Home";
+import Login from "./pages/Admin";
+import NavAdmin from "./components/Admin/NavAdmin";
+import NoMatch from "./pages/NoMatch";
+import OurProducers from "./pages/OurProducers";
+import TopNav from "./components/TopNav";
+import Terms from "./pages/Terms";
+import Wines from "./pages/Wines";
+import WineDetails from "./pages/WineDetails";
 
 class App extends React.Component {
   state = {
