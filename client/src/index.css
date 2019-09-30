@@ -35,6 +35,11 @@ br {
     line-height: 14pt;
 }
 
+.btn.btn-primary.cartBtn {
+    margin-right: 7pt;
+    margin-left: 7pt;
+}
+
 .card {
     padding: 2%;
     background-color: rgba(255, 255, 255, 0.7);
@@ -49,6 +54,10 @@ br {
     border: none;
     font-family: "Times New Roman", Times, serif;
     font-size: 24px;
+}
+
+.col-2 {
+    margin-right: 7pt;
 }
 
 #contact {
@@ -167,7 +176,11 @@ li.slide {
     z-index: 3;
 }
 
-.myCarousel button {
+.modalTitle {
+    margin-bottom: 0;
+}
+
+.myCarousel-button {
     color: white;
     height: 100%;
     vertical-align: center;
@@ -234,11 +247,13 @@ th {
     background-color: rgb(83, 6, 6);
     border-color: rgb(83, 6, 6);
     margin-left: 7px;
+    margin-right: 7px;
 }
 
 .btn-primary:hover {
     background-color: rgb(145, 1, 1);
     margin-left: 7px;
+    margin-right: 7px;
 }
 
 .btn-search {
@@ -253,4 +268,6 @@ th {
 .btn-link {
     color: rgb(83, 6, 6);
     padding: 0;
+    margin-left: 7px;
+    margin-right: 7px;
 }

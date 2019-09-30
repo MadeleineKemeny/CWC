@@ -16,34 +16,34 @@ class MyCarousel extends Component {
 
   render() {
     return (
-        <Carousel
-          className="myCarousel"
-          showThumbs={false}
-          showStatus={false}
-          infiniteLoop={true}
-          autoPlay={true}
-          interval={10000}
-          transitionTime={5000}
-        >
-          <div>
-            <img src={img1} alt="" />
-          </div>
-          <div>
-            <img src={img2} alt="" />
-          </div>
-          <div>
-            <img src={img3} alt="" />
-          </div>
-          <div>
-            <img src={img4} alt="" />
-          </div>
-          <div>
-            <img src={img5} alt="" />
-          </div>
-          <div>
-            <img src={img6} alt="" />
-          </div>
-        </Carousel>
+      <Carousel
+        className="myCarousel"
+        showThumbs={false}
+        showStatus={false}
+        infiniteLoop={true}
+        autoPlay={true}
+        interval={10000}
+        transitionTime={5000}
+      >
+        <div>
+          <img src={img1} alt="" />
+        </div>
+        <div>
+          <img src={img2} alt="" />
+        </div>
+        <div>
+          <img src={img3} alt="" />
+        </div>
+        <div>
+          <img src={img4} alt="" />
+        </div>
+        <div>
+          <img src={img5} alt="" />
+        </div>
+        <div>
+          <img src={img6} alt="" />
+        </div>
+      </Carousel>
     );
   }
 }

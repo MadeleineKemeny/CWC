@@ -1,6 +1,4 @@
-
-
-.myCarousel button {
+.myCarousel-button {
     color: white;
     height: 100%;
     vertical-align: center;
@@ -11,7 +9,10 @@
     height: 100%;
 }
 
-.myCarousel .carousel, .slider-wrapper,.slider, .carousel .slide img {
+.myCarousel .carousel,
+.slider-wrapper,
+.slider,
+.carousel .slide img {
     height: 100%;
 }
 
