@@ -132,6 +132,15 @@ h4 {
     margin-bottom: 7pt;
 }
 
+input {
+    border-radius: 5px;
+}
+
+.iSearch {
+    border-radius: 5px;
+    margin-left: 7px;
+}
+
 li {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 11pt;
@@ -224,13 +233,24 @@ th {
 .btn-primary {
     background-color: rgb(83, 6, 6);
     border-color: rgb(83, 6, 6);
+    margin-left: 7px;
 }
 
 .btn-primary:hover {
     background-color: rgb(145, 1, 1);
+    margin-left: 7px;
+}
+
+.btn-search {
+    background-color: rgb(145, 1, 1);
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    height: 23px;
+    margin-left: 7px;
 }
 
 .btn-link {
-    color:  rgb(83, 6, 6); 
+    color: rgb(83, 6, 6);
     padding: 0;
 }
