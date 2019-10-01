@@ -75,7 +75,7 @@ class Cart extends React.Component {
         return (
             <div className="scroll">
                 <CartCard>
-                    <h1 className="card-title">Cart: {this.props.cartItems.length} items</h1>
+                    <h3>Cart: {this.props.cartItems.length} items</h3>
                     {this.props.cartItems.length > 0 ?
                         (<CartTable>
                             {this.props.cartItems.map(cartItem => (
@@ -101,11 +101,11 @@ class Cart extends React.Component {
                             />
                         </CartTable>
 
-                        ) : <div>Looks a little empty. Browse our collection of wines.</div>}
+                        ) : <div className="cartNote">Looks a little empty. Browse our collection of wines.</div>}
                 </CartCard>
                 <CartCard>
                     <div className="paymentSection">
-                    <h1 className="card-title">Shipping Information</h1>
+                    <h3 className="checkoutHeader">Shipping Information</h3>
                     <div className="form-row">
                         <div className="form-group col-md-6">
                             <input type="text" className="form-control" name="firstNameInput" value={this.state.firstNameInput} placeholder="First Name" />
@@ -184,7 +184,7 @@ class Cart extends React.Component {
                             <input type="text" className="form-control" name="inputZip" value={this.state.inputZip} placeholder="Zip Code" />
                         </div>
                         </div>
-                        <h1 className="card-title">Payment Information</h1>
+                        <h3 className="checkoutHeader">Payment Information</h3>
                         <div className="form-group row">
                             <label for="cardholderInput" className="col-sm-2 col-form-label">Cardholder Name</label>
                                 <div className="col-sm-10">

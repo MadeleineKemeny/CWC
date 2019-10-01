@@ -5,9 +5,9 @@ function VineyardList(props) {
             <div className="card">
                 <div className="card-body">
                     <div className="row">
-                        <div className="col-sm-12">
-                            <h4>{props.vineyardName}</h4>
-                            <p>{props.subregion} - {props.vineyardRegion}</p>
+                        <div>
+                            <h4 className="vinedetails">{props.vineyardName}</h4>
+                            <p className="vinedetails">{props.subregion} - {props.vineyardRegion}</p>
                         </div>
                     </div>
                     <div className="row">
