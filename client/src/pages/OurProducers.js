@@ -13,6 +13,7 @@ class OurProducers extends Component {
           <img
             src="https://girlsgottadrink.com/wp-content/uploads/2016/09/Italian_Wine_Grapes_Sagrantino-770x963.jpg"
             id="grapes"
+            alt="grapes"
           />
           Our producers are guided by a sense of responsible stewardship of
           their heritage, as well as of their vines.
