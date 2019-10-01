@@ -56,6 +56,12 @@ br {
     font-size: 24px;
 }
 
+.cartNote {
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(145, 1, 1);
+}
+
 .col-2 {
     margin-right: 7pt;
 }

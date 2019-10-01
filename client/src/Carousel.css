@@ -5,6 +5,7 @@
 }
 
 .myCarousel {
+    margin-top: 50px;
     position: absolute;
     height: 100%;
 }

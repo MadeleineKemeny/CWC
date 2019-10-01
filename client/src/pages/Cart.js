@@ -100,8 +100,8 @@ class Cart extends React.Component {
                             }
                             />
                         </CartTable>
-
-                        ) : <div className="cartNote">Looks a little empty. Browse our collection of wines.</div>}
+                        
+                        ) : <div className="cartNote">It looks a little empty... browse our collection!</div>}
                 </CartCard>
                 <CartCard>
                     <div className="paymentSection">

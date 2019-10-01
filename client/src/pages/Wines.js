@@ -17,7 +17,13 @@ class Wines extends React.Component {
     textQuery: "", // User's search terms
 
     showModal: false,
-    selectedWine: null
+    selectedWine: null,
+
+    cartItems: [],
+    subtotal: 0,
+    shippingCost: 19.99,
+    tax: 0,
+    orderTotal: 0
   };
 
   componentDidMount() {
@@ -101,6 +107,24 @@ class Wines extends React.Component {
       selectedWine: null
     });
   };
+  ////
+
+  handleAddToCart = wine => {
+    console.log("add wine to cart", wine);
+    var exisitingCart = this.state.cartItems;
+    var priceTotal = this.state.subtotal;
+    var newSubtotal = (priceTotal += wine.price);
+    var taxTotal = newSubtotal * 0.1;
+
+    this.setState({
+      cartItems: [...exisitingCart, wine],
+      subtotal: newSubtotal,
+      tax: taxTotal,
+      orderTotal: newSubtotal + taxTotal + this.state.shippingCost
+    });
+  };
+
+  ///
 
   render() {
     return (
