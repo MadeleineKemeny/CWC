@@ -59,12 +59,12 @@ export function Subtotal(props) {
                 <td></td>
             </tr>
             <tr>
-                <td>Order Total</td>
+                <td className="orderTotal">Order Total</td>
                 <td></td>
-                <td>${props.orderTotal}</td>
+                <td className="orderTotal">${props.orderTotal}</td>
                 <td></td>
             </tr>
-            <p>If you're ready to purchase the content of your cart, please scroll down to complete the checkout process.</p>
+            <p className="cartNote">If you're ready to purchase the content of your cart, please scroll down to complete the checkout process.</p>
         </tbody>
     )
 }

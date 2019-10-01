@@ -271,3 +271,16 @@ th {
     margin-left: 7px;
     margin-right: 7px;
 }
+
+.checkoutHeader {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.cartNote {
+    margin-left: 12px;
+}
+
+.orderTotal {
+    font-weight: 700;
+}
