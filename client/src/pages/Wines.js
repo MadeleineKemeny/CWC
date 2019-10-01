@@ -146,7 +146,8 @@ class Wines extends React.Component {
             <option value="high">Above $50</option>
           </select>
 
-          <input className="iSearch"
+          <input
+            className="iSearch"
             type="search"
             placeholder="Search"
             value={this.state.textQuery}
