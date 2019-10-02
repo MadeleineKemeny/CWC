@@ -122,6 +122,7 @@ class App extends React.Component {
                       onDelete={this.handleItemDelete}
                       tax={this.state.tax}
                       orderTotal={this.state.orderTotal}
+                      onAddToCart={this.handleAddToCart}
                     />
                   )}
                 />

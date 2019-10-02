@@ -35,7 +35,7 @@ class WineDetailsModal extends Component {
                 }
                 volume={this.props.wine.volume}
                 price={this.props.wine.price}
-                onAddToCart={() => this.props.onAddToCart}
+                onAddToCart={() => this.props.onAddToCart(this.props.wine)}
               />
 
               {/* Vineyard information */}

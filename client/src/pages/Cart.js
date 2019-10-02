@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 
 class Cart extends React.Component {
     state = {
-        wineName: "",
-        wineQty: "",
-        winePrice: "",
-        firstNameInput: "",
-        lastNameInput: "",
-        inputAddress: "",
-        inputAddress2: "",
-        inputCity: "",
-        inputState: "",
-        inputZip: "",
+        // wineName: "",
+        // wineQty: "",
+        // winePrice: "",
+        // firstNameInput: "",
+        // lastNameInput: "",
+        // inputAddress: "",
+        // inputAddress2: "",
+        // inputCity: "",
+        // inputState: "",
+        // inputZip: "",
         showModal: false,
         selectedWine: null
     }
@@ -58,6 +58,7 @@ class Cart extends React.Component {
     }
 
     handleInputChange = event => {
+        event.preventDefault();
         const { name, value } = event.target;
         this.setState({
             [name]: value
