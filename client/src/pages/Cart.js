@@ -70,7 +70,6 @@ class Cart extends React.Component {
         event.preventDefault();
         this.saveOrder();       
     };
-
     
     render() {
         return (
@@ -249,7 +248,8 @@ class Cart extends React.Component {
             <WineDetailsModal 
             showModal={this.state.showModal} 
             hideModal={this.handleHideModal} 
-            wine={this.state.selectedWine} 
+            wine={this.state.selectedWine}
+            onAddToCart={() => this.props.onAddToCart(this.state.selectedWine)} 
             ></WineDetailsModal>    
             </div>
             

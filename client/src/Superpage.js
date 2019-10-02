@@ -114,7 +114,7 @@ class App extends React.Component {
                 <Route
                   exact
                   path="/cart"
-                  render={() => (
+                  render={routeProps => (
                     <Cart
                       cartItems={this.state.cartItems}
                       subtotal={this.state.subtotal}
@@ -123,6 +123,7 @@ class App extends React.Component {
                       tax={this.state.tax}
                       orderTotal={this.state.orderTotal}
                       onAddToCart={this.handleAddToCart}
+                      {...routeProps}
                     />
                   )}
                 />
