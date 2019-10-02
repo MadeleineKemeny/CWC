@@ -66,6 +66,8 @@ class App extends React.Component {
     return (
       <div>
         <Carousel
+          showIndicators={false}
+          showArrows={false}
           className="myCarousel"
           showThumbs={false}
           showStatus={false}
