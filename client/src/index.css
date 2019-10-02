@@ -94,6 +94,10 @@ br {
     z-index: 3;
 }
 
+.far {
+    color: rgb(145, 1, 1);  
+}
+
 .fas {
     color: rgb(215, 219, 166);
 }
