@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 
 class Cart extends React.Component {
     state = {
-        wineName: "",
-        wineQty: "",
-        winePrice: "",
-        firstNameInput: "",
-        lastNameInput: "",
-        inputAddress: "",
-        inputAddress2: "",
-        inputCity: "",
-        inputState: "",
-        inputZip: "",
+        // wineName: "",
+        // wineQty: "",
+        // winePrice: "",
+        // firstNameInput: "",
+        // lastNameInput: "",
+        // inputAddress: "",
+        // inputAddress2: "",
+        // inputCity: "",
+        // inputState: "",
+        // inputZip: "",
         showModal: false,
         selectedWine: null
     }
@@ -58,6 +58,7 @@ class Cart extends React.Component {
     }
 
     handleInputChange = event => {
+        event.preventDefault();
         const { name, value } = event.target;
         this.setState({
             [name]: value
@@ -69,7 +70,6 @@ class Cart extends React.Component {
         event.preventDefault();
         this.saveOrder();       
     };
-
     
     render() {
         return (
@@ -100,8 +100,8 @@ class Cart extends React.Component {
                             }
                             />
                         </CartTable>
-
-                        ) : <div className="cartNote">Looks a little empty. Browse our collection of wines.</div>}
+                        
+                        ) : <div className="cartNote">It looks a little empty... browse our collection!</div>}
                 </CartCard>
                 <CartCard>
                     <div className="paymentSection">
@@ -248,7 +248,8 @@ class Cart extends React.Component {
             <WineDetailsModal 
             showModal={this.state.showModal} 
             hideModal={this.handleHideModal} 
-            wine={this.state.selectedWine} 
+            wine={this.state.selectedWine}
+            onAddToCart={() => this.props.onAddToCart(this.state.selectedWine)} 
             ></WineDetailsModal>    
             </div>
             
