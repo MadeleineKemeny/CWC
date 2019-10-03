@@ -84,11 +84,13 @@ class App extends React.Component {
             </Nav.Link>
           </div>
 
-          <div className="wrapper">
-            <div id="container">
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route
+          <div className="row">
+            <div className="wrapper">
+              <div classname= "row">
+                <div id="container">
+                  <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route
                   exact
                   path="/admin"
                   render={() => (
@@ -96,12 +98,12 @@ class App extends React.Component {
                   )}
                 />
 
-                <Route
+                  <Route
                   exact
                   path="/wines"
                   render={() => <Wines onAddToCart={this.handleAddToCart} />}
                 />
-                <Route
+                  <Route
                   exact
                   path="/wine/:id"
                   render={routeProps => (
@@ -111,7 +113,7 @@ class App extends React.Component {
                     />
                   )}
                 />
-                <Route
+                  <Route
                   exact
                   path="/cart"
                   render={routeProps => (
@@ -127,7 +129,7 @@ class App extends React.Component {
                     />
                   )}
                 />
-                <Route
+                  <Route
                   exact
                   path="/cart/confirmation"
                   render={() => (
@@ -137,14 +139,16 @@ class App extends React.Component {
                     />
                   )}
                 />
-                <Route exact path="/producers" component={OurProducers} />
-                <Route exact path="/blogs" component={Blogs} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/terms" component={Terms} />
-                <Route exact path="/faqs" component={FAQs} />
-                <Route exact path="/home" component={Home} />
-                <Route component={NoMatch} />
-              </Switch>
+                  <Route exact path="/producers" component={OurProducers} />
+                  <Route exact path="/blogs" component={Blogs} />
+                  <Route exact path="/about" component={About} />
+                  <Route exact path="/terms" component={Terms} />
+                  <Route exact path="/faqs" component={FAQs} />
+                  <Route exact path="/home" component={Home} />
+                  <Route component={NoMatch} />
+                  </Switch>
+                </div>
+              </div>
             </div>
           </div>
           <div id="footer">

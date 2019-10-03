@@ -17,8 +17,8 @@ class WineDetails extends React.Component {
 
   render() {
     return (
-      <div className="scroll">
-        <div className="row">
+      <div className="row">
+        <div className="scroll">
           {!this.state.loading ? (
             <div className="col-sm-12">
               <WineCard
