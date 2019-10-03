@@ -18,9 +18,9 @@ class WineDetails extends React.Component {
   render() {
     return (
       <div className="scroll">
-        <div>
+        <div className="row">
           {!this.state.loading ? (
-            <div>
+            <div className="col-sm-12">
               <WineCard
                 key={this.state.wine._id}
                 id={this.state.wine._id}

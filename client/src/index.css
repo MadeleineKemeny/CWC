@@ -85,6 +85,8 @@ br {
     top: 58%;
     transform: translateY(-50%);
     margin: none;
+    display:flex;
+    flex-direction: column;
 }
 
 #CWClogo {

@@ -35,8 +35,18 @@ select {
   font-family: "Times New Roman", Times, serif;
 }
 
-.scroll {
+/* .scroll {
   height: 420px;
   overflow-y: scroll;
   margin-left: 10px;
+}  */
+.scroll {
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 55vh;
+
+  /* height: 30vh;
+  top: 20%;
+  transform: translateY(-50%); */
 }
