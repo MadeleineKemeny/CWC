@@ -294,3 +294,8 @@ th {
 .orderTotal {
     font-weight: 700;
 }
+
+.alert {
+    background-color:rgb(145, 1, 1);
+    color: #fff;
+}

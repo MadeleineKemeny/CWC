@@ -54,7 +54,6 @@ class Cart extends React.Component {
 
     handleCheckoutClick = event => {
         event.preventDefault()
-        // this.setState({showCheckout: true})
     }
 
     handleInputChange = event => {
@@ -70,7 +69,7 @@ class Cart extends React.Component {
         event.preventDefault();
         this.saveOrder();       
     };
-    
+
     render() {
         return (
             <div className="scroll">
@@ -96,7 +95,6 @@ class Cart extends React.Component {
                             orderTotal = {this.props.orderTotal.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
                             onClick = {
                                 this.handleCheckoutClick
-                                // this.setState({showCheckout: true})
                             }
                             />
                         </CartTable>
@@ -104,6 +102,9 @@ class Cart extends React.Component {
                         ) : <div className="cartNote">It looks a little empty... browse our collection!</div>}
                 </CartCard>
                 <CartCard>
+                    <div className="alert" role="alert">
+                        This is a mock cart. Do not enter any personal information.
+                    </div>
                     <div className="paymentSection">
                     <h3 className="checkoutHeader">Shipping Information</h3>
                     <div className="form-row">
@@ -115,14 +116,14 @@ class Cart extends React.Component {
                         </div>
                     </div>
                     <div className="form-group">
-                        <input type="text" className="form-control" name="inputAddress" value={this.state.inputAddress}  placeholder="Street Address" />
+                        <input type="text" className="form-control" name="inputAddress" value="123 Main Street"  placeholder="Street Address" />
                     </div>
                     <div className="form-group">
-                        <input type="text" className="form-control" name="inputAddress2" value={this.state.inputAddress2}  placeholder="Apartment, studio, or floor" />
+                        <input type="text" className="form-control" name="inputAddress2" value="Apt. 1A"  placeholder="Apartment, studio, or floor" />
                     </div>
                     <div className="form-row">
                         <div className="form-group col-md-6">
-                            <input type="text" className="form-control" name="inputCity" value={this.state.inputCity} placeholder="City" />
+                            <input type="text" className="form-control" name="inputCity" value="Springfield" placeholder="City" />
                         </div>
                         <div className="form-group col-md-4">
                             <select name="inputState" className="form-control">
@@ -181,20 +182,20 @@ class Cart extends React.Component {
                             </select>
                         </div>
                         <div className="form-group col-md-2">
-                            <input type="text" className="form-control" name="inputZip" value={this.state.inputZip} placeholder="Zip Code" />
+                            <input type="text" className="form-control" name="inputZip" value="01234" placeholder="Zip Code" />
                         </div>
                         </div>
                         <h3 className="checkoutHeader">Payment Information</h3>
                         <div className="form-group row">
                             <label for="cardholderInput" className="col-sm-2 col-form-label">Cardholder Name</label>
                                 <div className="col-sm-10">
-                                    <input type="text" className="form-control" id="cardholderInput" />
+                                    <input type="text" className="form-control" id="cardholderInput" value="Test Name"/>
                                 </div>
                         </div>
                         <div className="form-group row">
                             <label for="cardNumberInput" className="col-sm-2 col-form-label">Card Number</label>
                                 <div className="col-sm-10">
-                                    <input type="text" className="form-control" id="cardNumberInput" />
+                                    <input type="text" className="form-control" id="cardNumberInput" value="1234123412341234" />
                                 </div>
                         </div>
                         <div className="form-group row">
@@ -236,7 +237,7 @@ class Cart extends React.Component {
                                 </div>
                             <label for="securityCodeInput" className="col-sm-2 col-form-label">Security Code</label>
                                 <div className="col-sm-2">
-                                    <input type="text" className="form-control" id="securityCodeInput" />
+                                    <input type="text" className="form-control" id="securityCodeInput" value="123" />
                                 </div>
                         </div>
                         <Link to="/cart/confirmation">
