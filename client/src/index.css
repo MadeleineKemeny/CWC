@@ -129,9 +129,11 @@ br {
 
 #CWClogo {
     position: absolute;
-    width: 80%;
-    margin-top: 5%;
-    margin-left:1%;
+    max-width: 100%;
+    min-width: 10%;
+    height: auto;
+    margin-top: 4.1%;
+    margin-left: 1.5%;
     z-index: 1;
     display: flex;
 

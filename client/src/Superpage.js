@@ -81,7 +81,7 @@ class App extends React.Component {
           <div className="row">
             <div className="col-2-sm" id="CWClogo">
               <Nav.Link as={Link} to="/home">
-                <img src="reverseLogo.png" width="150" height="176" alt="" />
+                <img className="img-responsive" src="reverseLogo.png" alt="" />
               </Nav.Link>
             </div>
 
