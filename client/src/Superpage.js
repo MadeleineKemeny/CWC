@@ -78,74 +78,82 @@ class App extends React.Component {
         <div>
           <TopNav cartItems={this.state.cartItems}></TopNav>
           {window.location.pathname === "/admin" ? <NavAdmin /> : <span></span>}
-          <div id="CWClogo">
-            <Nav.Link as={Link} to="/home">
-              <img src="reverseLogo.png" width="150" height="176" alt="" />
-            </Nav.Link>
-          </div>
-
-          <div className="wrapper">
-            <div id="container">
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route
-                  exact
-                  path="/admin"
-                  render={() => (
-                    <Login updateGlobalState={this.updateGlobalState} />
-                  )}
-                />
-
-                <Route
-                  exact
-                  path="/wines"
-                  render={() => <Wines onAddToCart={this.handleAddToCart} />}
-                />
-                <Route
-                  exact
-                  path="/wine/:id"
-                  render={routeProps => (
-                    <WineDetails
-                      onAddToCart={this.handleAddToCart}
-                      {...routeProps}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/cart"
-                  render={routeProps => (
-                    <Cart
-                      cartItems={this.state.cartItems}
-                      subtotal={this.state.subtotal}
-                      shippingCost={this.state.shippingCost}
-                      onDelete={this.handleItemDelete}
-                      tax={this.state.tax}
-                      orderTotal={this.state.orderTotal}
-                      onAddToCart={this.handleAddToCart}
-                      {...routeProps}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/cart/confirmation"
-                  render={() => (
-                    <Confirmation
-                      orderTotal={this.state.orderTotal}
-                      clearCart={this.handleClearCart}
-                    />
-                  )}
-                />
-                <Route exact path="/producers" component={OurProducers} />
-                <Route exact path="/blogs" component={Blogs} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/terms" component={Terms} />
-                <Route exact path="/faqs" component={FAQs} />
-                <Route exact path="/home" component={Home} />
-                <Route component={NoMatch} />
-              </Switch>
+          <div className="row">
+            <div className="col-2-sm" id="CWClogo">
+              <Nav.Link as={Link} to="/home">
+                <img className="img-responsive" src="reverseLogo.png" alt="" />
+              </Nav.Link>
             </div>
+
+            <div className="col-8-sm">
+              <div className="wrapper">
+                <div id="container">
+                  <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route
+                      exact
+                      path="/admin"
+                      render={() => (
+                        <Login updateGlobalState={this.updateGlobalState} />
+                      )}
+                    />
+
+                    <Route
+                      exact
+                      path="/wines"
+                      render={() => (
+                        <Wines onAddToCart={this.handleAddToCart} />
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/wine/:id"
+                      render={routeProps => (
+                        <WineDetails
+                          onAddToCart={this.handleAddToCart}
+                          {...routeProps}
+                        />
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/cart"
+                      render={routeProps => (
+                        <Cart
+                          cartItems={this.state.cartItems}
+                          subtotal={this.state.subtotal}
+                          shippingCost={this.state.shippingCost}
+                          onDelete={this.handleItemDelete}
+                          tax={this.state.tax}
+                          orderTotal={this.state.orderTotal}
+                          onAddToCart={this.handleAddToCart}
+                          {...routeProps}
+                        />
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/cart/confirmation"
+                      render={() => (
+                        <Confirmation
+                          orderTotal={this.state.orderTotal}
+                          clearCart={this.handleClearCart}
+                        />
+                      )}
+                    />
+                    <Route exact path="/producers" component={OurProducers} />
+                    <Route exact path="/blogs" component={Blogs} />
+                    <Route exact path="/about" component={About} />
+                    <Route exact path="/terms" component={Terms} />
+                    <Route exact path="/faqs" component={FAQs} />
+                    <Route exact path="/home" component={Home} />
+                    <Route component={NoMatch} />
+                  </Switch>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-2-sm"></div>
           </div>
           <div id="footer">
             <BottomNav></BottomNav>
