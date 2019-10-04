@@ -50,3 +50,7 @@ select {
   top: 20%;
   transform: translateY(-50%); */
 }
+
+.scrollCart {
+  max-height: 60vh;
+}
