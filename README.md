@@ -31,6 +31,9 @@ This site includes a full e-commerce experience of browsing or searching product
 - Material Admin
 - Node.js
 - MongoDB
+- Axios
+- Cheerio
+- Heroku
 
 ## Instructions to run locally
 
