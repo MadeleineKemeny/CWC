@@ -37,7 +37,6 @@ This site includes a full e-commerce experience of browsing or searching product
 Install npm packages: 
 ```
 npm i
-
 ```
 Clone the repo from Github, and run locally by typing in your terminal:
 ```
@@ -51,4 +50,4 @@ npm start
 - [Matthew Heimark](https://github.com/matthewheimark)
 - [Madeleine Kemeny](https://github.com/MadeleineKemeny)
 - [Marta Tomaras](https://github.com/mktomaras)
-```
+
