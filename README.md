@@ -34,15 +34,16 @@ This site includes a full e-commerce experience of browsing or searching product
 
 ## Instructions to run locally
 
-Install npm packages: npm i
+Install npm packages: 
+```
+npm i
 
 ```
-Clone the repo from Github
+Clone the repo from Github, and run locally by typing in your terminal:
+```
+npm start
 ```
 
-Run locally using: npm start
-
-```
 
 ## Contributors
 
